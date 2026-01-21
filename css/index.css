@@ -5084,6 +5084,20 @@ figure.highlight pre .javascript .function {
 #post .ads-wrap {
   margin: 40px 0;
 }
+#article-container {
+  font-family: SimSun, "Times New Roman", "Songti SC", serif !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+}
+#article-container * {
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+#article-container code,
+#article-container pre {
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 14px !important;
+}
 .relatedPosts {
   margin-top: 40px;
 }
