@@ -5089,9 +5089,30 @@ figure.highlight pre .javascript .function {
   font-size: 16px !important;
   line-height: 1.8 !important;
 }
-#article-container * {
+#article-container *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
   font-family: inherit !important;
   font-size: inherit !important;
+}
+#article-container h1 {
+  font-family: "SimHei", bold !important;
+  font-size: 26px !important;
+}
+#article-container h2 {
+  font-family: "SimHei", bold !important;
+  font-size: 22px !important;
+}
+#article-container h3 {
+  font-family: "SimHei", bold !important;
+  font-size: 19px !important;
+}
+#article-container h4 {
+  font-family: "SimHei", bold !important;
+  font-size: 16px !important;
+}
+#article-container h5,
+#article-container h6 {
+  font-family: "SimHei", bold !important;
+  font-size: 12px !important;
 }
 #article-container code,
 #article-container pre {
