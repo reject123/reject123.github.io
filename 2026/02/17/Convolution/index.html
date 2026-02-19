@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Convolution | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="问题引入 考虑一个实际问题，现在我们有电路、麦克风、音箱等系统。我们不知道其内部构造，然而，我们知道这些系统为线性时不变系统（Linear Time-Invariant System，LTIS），满足下列性质：  线性  齐次性：假设$x(t)$为LTI系统的输入，其对应的输出为$y(t)$，则若$k·x(t)$为LTI系统的输入，其输出为$k·y(t)$。 可叠加性：假设$x_1(t)$，$x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Convolution">
+<meta property="og:url" content="http://example.com/2026/02/17/Convolution/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="问题引入 考虑一个实际问题，现在我们有电路、麦克风、音箱等系统。我们不知道其内部构造，然而，我们知道这些系统为线性时不变系统（Linear Time-Invariant System，LTIS），满足下列性质：  线性  齐次性：假设$x(t)$为LTI系统的输入，其对应的输出为$y(t)$，则若$k·x(t)$为LTI系统的输入，其输出为$k·y(t)$。 可叠加性：假设$x_1(t)$，$x">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-02-17T12:05:31.000Z">
+<meta property="article:modified_time" content="2026-02-17T13:20:21.521Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Convolution" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/02/17/Convolution/" class="article-date">
+  <time class="dt-published" datetime="2026-02-17T12:05:31.000Z" itemprop="datePublished">2026-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Convolution
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>问题引入</p>
+<p>考虑一个实际问题，现在我们有电路、麦克风、音箱等系统。我们不知道其内部构造，然而，我们知道这些系统为<strong>线性时不变系统（Linear Time-Invariant System，LTIS）</strong>，满足下列<strong>性质</strong>：</p>
+<ul>
+<li><p>线性</p>
+<ul>
+<li>齐次性：假设$x(t)$为LTI系统的输入，其对应的输出为$y(t)$，则若$k·x(t)$为LTI系统的输入，其输出为$k·y(t)$。</li>
+<li>可叠加性：假设$x_1(t)$，$x_2(t)$为LTI系统的输入，其对应的输出分别为$y_1(t)$，$y_2(t)$，则若$x_1(t) + x_2(t)$为LTI系统的输入，其输出为$y_1(t) + y_2(t)$。</li>
+</ul>
+</li>
+<li><p>时不变性</p>
+<p>​    假设$x(t)$为LTI系统的输入，其对应的输出为$y(t)$，则若$x(t-\tau)$为LTI系统的输入，则其输出为$y(t-\tau)$。</p>
+</li>
+</ul>
+<p><strong>现在给定系统的输入$x(t)$，问系统输出$y(t)$为多少？</strong></p>
+</li>
+<li><p>信号的分解</p>
+<p>对于任意的信号$x(t)$，其可用冲激信号进行分解：<br>$$<br>x(t)&#x3D;\int_{-\infty}^{\infty} x(\tau)·\delta(t-\tau) , d\tau<br>$$<br>上式表明，信号$x(t)$可以表示为许多个强度为$x(\tau)$的冲激函数$\delta(t-\tau)$表示，记<br>$$<br>q(t)&#x3D;x(\tau)·\delta(t-\tau)<br>$$</p>
+</li>
+<li><p>系统响应</p>
+<p>由<strong>LTI系统的性质</strong>和<strong>信号的冲激函数分解</strong>，$x(t)$经过系统输出$y(t)$可以表示为：<br>$$<br>y(t)&#x3D;\int_{-\infty}^{\infty} F(q(t)) , d\tau<br>$$<br>其中，$F(q(t))$表示信号$q(t)$经过系统的输出，而$q(t)$是个冲激函数，设系统对$\delta(t)$的输出为$h(t)$，则由<strong>LTI系统的性质</strong>:<br>$$<br>F(q(t))&#x3D;x(\tau)·h(t-\tau)<br>$$<br>则：<br>$$<br>y(t)&#x3D;\int_{-\infty}^{\infty} x(\tau)·h(t-\tau) , d\tau<br>$$<br>记上式为：<br>$$<br>y(t)&#x3D;x(t)<em>h(t)<br>$$<br>称为$x(t)$和$h(t)$的*<em>卷积</em></em>。</p>
+</li>
+<li><p>频域</p>
+<p>通过<strong>LTI系统的性质</strong>和<strong>信号的冲激函数分解</strong>，我们知道在<strong>时域</strong>上，对于一个输入$x(t)$，输出$y(t)$的表达式就如上式所示。然而，计算量可能比较大，我们也不知道到底系统对$x(t)$做了什么？</p>
+<p>通过<strong>傅里叶变换</strong>，我们可以把<strong>时域</strong>上的信号转换到<strong>频域</strong>上，可以从定义上<strong>证明</strong>，<strong>时域上的卷积对应频域上的乘积</strong>，因此有：<br>$$<br>Y(w)&#x3D;X(w)·H(w)<br>$$<br>LTI系统满足上述结论。此外，另一方面，可以从<strong>LTI系统的复指数响应性质</strong>，<strong>印证</strong>上述结论。</p>
+<p>LTI系统的复指数响应性质表示为，<strong>复指数信号</strong>为LTI系统的<strong>特征基</strong>，即<br>$$<br>y(t)&#x3D;H(w)·e^{jwt}<br>$$<br>而复指数信号正是傅里叶变换中的基，傅里叶变换把原信号分解成了许多个复指数信号，系数为$X(w)$。由<strong>LTI系统的性质</strong>，原信号通过LTI系统，就是LTI系统作用与复指数信号，就是对每个复指数信号乘以$H(w)$，因此系数变为$H(w)·X(w)$。</p>
+</li>
+<li><p>二维的卷积</p>
+<p>上述卷积建立在<strong>时域</strong>（一维函数上）上，<strong>二维函数上的卷积</strong>定义为：<br>$$<br>f(x,y)*g(x,y)&#x3D;\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(u, v) , g(x - u, y - v) , du , dv<br>$$</p>
+</li>
+<li><p>图像问题</p>
+<p>现在又有另一个问题，给一张图片，我们想要实现某些效果（模糊、锐化等）。图像是二维的（离散的，$f(x,y)$），一种比较容易想到的方法是对图片进行某种“操作”或“运算”，来实现这些效果。因此，现在的问题是，<strong>如何设计这个“运算”呢</strong>？</p>
+<p>回到<strong>二维卷积</strong>，我们知道数学上已经有了“<strong>卷积</strong>”这个运算，该运算具有良好的性质：</p>
+<p><strong>空间域上的卷积等于频域上的乘积</strong></p>
+<p>因此，卷积给我们提供了<strong>计算上的便利</strong>以及看待问题的新的角度：<strong>频域</strong></p>
+<p>于是，我们使用“<strong>卷积</strong>”这个运算，去实现上面的效果。为了实现上面的效果我们需要一个和原图片“卷积”的“<strong>东西</strong>”，因此，我们设计了一个“<strong>东西</strong>“去和原图片做卷积，该”<strong>东西</strong>“即被称为”<strong>卷积核</strong>“。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/02/17/Convolution/" data-id="cuidQ-RxrTAKxZqsknTyTG1Z3" data-title="Convolution" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/02/19/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2026/01/23/DOOM_Misc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">DOOM_Misc</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DOOM/" rel="tag">DOOM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Monster/" rel="tag">Monster</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DOOM/" style="font-size: 20px;">DOOM</a> <a href="/tags/Monster/" style="font-size: 10px;">Monster</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/02/">February 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/01/">January 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/02/19/Doom%20Slayer/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2026/02/19/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2026/02/17/Convolution/">Convolution</a>
+          </li>
+        
+          <li>
+            <a href="/2026/01/23/DOOM_Misc/">DOOM_Misc</a>
+          </li>
+        
+          <li>
+            <a href="/2026/01/21/Monsters_DOOM/">DOOM Monsters</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
