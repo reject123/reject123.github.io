@@ -1,153 +1,78 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Hexo",
-  "alternateName": [
-    "example.com"
-  ],
-  "url": "http://example.com/"
-}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
-    (() => {
-      
-    const saveToLocal = {
-      set: (key, value, ttl) => {
-        if (!ttl) return
-        const expiry = Date.now() + ttl * 86400000
-        localStorage.setItem(key, JSON.stringify({ value, expiry }))
-      },
-      get: key => {
-        const itemStr = localStorage.getItem(key)
-        if (!itemStr) return undefined
-        const { value, expiry } = JSON.parse(itemStr)
-        if (Date.now() > expiry) {
-          localStorage.removeItem(key)
-          return undefined
-        }
-        return value
-      }
-    }
 
-    window.btf = {
-      saveToLocal,
-      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
-        script.onload = script.onreadystatechange = () => {
-          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
-        }
-        script.onerror = reject
-        document.head.appendChild(script)
-      }),
-      getCSS: (url, id) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onload = link.onreadystatechange = () => {
-          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
-        }
-        link.onerror = reject
-        document.head.appendChild(link)
-      }),
-      addGlobalFn: (key, fn, name = false, parent = window) => {
-        if (!false && key.startsWith('pjax')) return
-        const globalFn = parent.globalFn || {}
-        globalFn[key] = globalFn[key] || {}
-        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
-        parent.globalFn = globalFn
-      }
-    }
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hexo</title>
   
-      
-      const activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      const activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
 
-      btf.activateDarkMode = activateDarkMode
-      btf.activateLightMode = activateLightMode
 
-      const theme = saveToLocal.get('theme')
-    
-          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
-        
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
-      }
-    
-      
-    const detectApple = () => {
-      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
-        document.documentElement.classList.add('apple')
-      }
-    }
-    detectApple()
-  
-    })()
-  </script><script>const GLOBAL_CONFIG = {
-  root: '/',
-  algolia: undefined,
-  localSearch: undefined,
-  translate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
-  copy: {
-    success: 'Copy Successful',
-    error: 'Copy Failed',
-    noSupport: 'Browser Not Supported'
-  },
-  relativeDate: {
-    homepage: false,
-    post: false
-  },
-  runtime: '',
-  dateSuffix: {
-    just: 'Just now',
-    min: 'minutes ago',
-    hour: 'hours ago',
-    day: 'days ago',
-    month: 'months ago'
-  },
-  copyright: undefined,
-  lightbox: 'null',
-  Snackbar: undefined,
-  infinitegrid: {
-    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
-    buttonText: 'Load More'
-  },
-  isPhotoFigcaption: false,
-  islazyloadPlugin: false,
-  isAnchor: false,
-  percent: {
-    toc: true,
-    rightside: false,
-  },
-  autoDarkmode: false
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: 'Hexo',
-  isHighlightShrink: false,
-  isToc: false,
-  pageType: 'home'
-}</script><meta name="generator" content="Hexo 8.1.1"><style>mjx-container[jax="SVG"] {
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -259,32 +184,901 @@ mjx-container[display="true"] {
 mjx-container[display="true"] + br {
   display: none;
 }
-</style></head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Hexo</span></a></span><div id="menus"></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/02/19/Doom%20Slayer/" title="Untitled">Untitled</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-02-19T07:54:46.758Z" title="Created 2026-02-19 15:54:46">2026-02-19</time></span></div><div class="content">So you walk eternally through the shadow realms, standing against evil where all others falter. May your thirst for retribution never quench, may the blood on your sword never dry, and may we never need you again. -Corrax Entry 7:17 [DOOM 2016]  你将会永世行走在黑暗的境界，挺身对抗邪恶，无所谓他人恐惧。愿你报复的渴求从未熄灭，剑血永不干枯，愿我们永远不再需要你。 ——科睿思篇 节17 [DOOM 2016]                                                          They are rage, brutal, without mercy. But you. You will be worse. Rip and tear, until it is done. 他们是愤怒的化身，残忍又冷...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/02/19/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-02-19T07:45:23.740Z" title="Created 2026-02-19 15:45:23">2026-02-19</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot; More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/02/17/Convolution/" title="Convolution">Convolution</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-02-17T12:05:31.000Z" title="Created 2026-02-17 20:05:31">2026-02-17</time></span></div><div class="content"> 问题引入 考虑一个实际问题，现在我们有电路、麦克风、音箱等系统。我们不知道其内部构造，然而，我们知道这些系统为线性时不变系统（Linear Time-Invariant System，LTIS），满足下列性质：  线性  齐次性：假设为LTI系统的输入，其对应的输出为，则若为LTI系统的输入，其输出为。 可叠加性：假设，为LTI系统的输入，其对应的输出分别为，，则若为LTI系统的输入，其输出为。   时不变性 ​    假设为LTI系统的输入，其对应的输出为，则若为LTI系统的输入，则其输出为。   现在给定系统的输入，问系统输出为多少？  信号的分解 对于任意的信号，其可用冲激信号进行分解：  x(t)=\int_{-\infty}^{\infty} x(\tau)·\delta(t-\tau) \, d\tau上式表明，信号可以表示为许多个强度为的冲激函数表示，记  q(t)=x(\tau)·\delta(t-\tau) 系统响应 由LTI系统的性质和信号的冲激函数分解，经过系统输出可以表示为：  y(t)=\int_{-\infty}^{\infty} F(q(t)) \...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2026/01/23/DOOM_Misc/" title="DOOM_Misc"><img class="post-bg" src="/img/DoomSlayer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOOM_Misc"></a></div><div class="recent-post-info"><a class="article-title" href="/2026/01/23/DOOM_Misc/" title="DOOM_Misc">DOOM_Misc</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-01-23T15:00:48.000Z" title="Created 2026-01-23 23:00:48">2026-01-23</time></span></div><div class="content">Kadingir Sanctum（卡丁格圣所） The Blood Keep, also referred to as the Kadingir Sanctum, is a sprawling network of tunnels, catacombs and temples that connect the wasteland Umbral Plains to the Great Steppe. It is believed that this area serves as a place of worship and vilification as both hero and enemy can be found buried in tombs throughout the region. The area is inhabited by all manner of demons, including The Possessed, the Unwilling, Hell Knights and other non-classified creatures. The Proje...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2026/01/21/Monsters_DOOM/" title="DOOM Monsters"><img class="post-bg" src="/img/DoomSlayer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOOM Monsters"></a></div><div class="recent-post-info"><a class="article-title" href="/2026/01/21/Monsters_DOOM/" title="DOOM Monsters">DOOM Monsters</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2026-01-21T08:57:31.000Z" title="Created 2026-01-21 16:57:31">2026-01-21</time></span></div><div class="content">DOOM 2016The Possessed（恶灵） The Possessed are created in a Lazarus Wave event, a phenomenon was first discovered by Dr.Olivia Pierce during her Lazarus Project. While most victims exposed to Argent biowaves will expire without further effect, some subjects will absorb traces of Argent Energy and enter a state of posthumous vigor. Despite necrosis of the internal organs (with the exception of the brain), the victim continues to animate and exhibit a low order of sentience for weeks or even mont...</div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">John Doe</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/19/Doom%20Slayer/" title="Untitled">Untitled</a><time datetime="2026-02-19T07:54:46.758Z" title="Created 2026-02-19 15:54:46">2026-02-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/19/hello-world/" title="Hello World">Hello World</a><time datetime="2026-02-19T07:45:23.740Z" title="Created 2026-02-19 15:45:23">2026-02-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/17/Convolution/" title="Convolution">Convolution</a><time datetime="2026-02-17T12:05:31.000Z" title="Created 2026-02-17 20:05:31">2026-02-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/23/DOOM_Misc/" title="DOOM_Misc"><img src="/img/DoomSlayer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOOM_Misc"/></a><div class="content"><a class="title" href="/2026/01/23/DOOM_Misc/" title="DOOM_Misc">DOOM_Misc</a><time datetime="2026-01-23T15:00:48.000Z" title="Created 2026-01-23 23:00:48">2026-01-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/01/21/Monsters_DOOM/" title="DOOM Monsters"><img src="/img/DoomSlayer.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOOM Monsters"/></a><div class="content"><a class="title" href="/2026/01/21/Monsters_DOOM/" title="DOOM Monsters">DOOM Monsters</a><time datetime="2026-01-21T08:57:31.000Z" title="Created 2026-01-21 16:57:31">2026-01-21</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Monster/" style="font-size: 1.1em; color: #999">Monster</a> <a href="/tags/DOOM/" style="font-size: 1.5em; color: #99a9bf">DOOM</a></div></div><div class="card-widget card-archives">
-    <div class="item-headline">
-      <i class="fas fa-archive"></i>
-      <span>Archives</span>
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/19/Doom%20Slayer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/02/19/Doom%20Slayer/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-02-19 15:54:46" itemprop="dateCreated datePublished" datetime="2026-02-19T15:54:46+08:00">2026-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-17 21:46:47" itemprop="dateModified" datetime="2026-02-17T21:46:47+08:00">2026-02-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>So you walk eternally through the shadow realms, standing against evil where all others falter. May your thirst for retribution never quench, may the blood on your sword never dry, and may we never need you again.</p>
+<div align="right">-Corrax Entry 7:17 [DOOM 2016]</div>
+
+<p>你将会永世行走在黑暗的境界，挺身对抗邪恶，无所谓他人恐惧。愿你报复的渴求从未熄灭，剑血永不干枯，愿我们永远不再需要你。</p>
+<div align="right">——科睿思篇 节17 [DOOM 2016]</div>                                                        
+
+<p>They are rage, brutal, without mercy. But you. You will be worse. Rip and tear, until it is done.</p>
+<p>他们是愤怒的化身，残忍又冷血。但是你，你比他们更可怕。大开杀戒，直到一切结束吧。</p>
+<div align="right"> -DOOM 2016</div>                                                    
+
+<p>In the first age, in the first battle, when the shadows first lengthened, one stood. Burned by the embers of Armageddon, his soul blistered by the fires of Hell and tainted beyond ascension, he chose the path of perpetual torment. In his ravenous hatred he found no peace; and with boiling blood he scoured the Umbral Plains seeking vengeance against the dark lords who had wronged him. He wore the crown of the Night Sentinels, and those that tasted the bite of his sword named him…the Doom Slayer.</p>
+<div align="right">——Slayer's Testament:Ⅰ [DOOM 2016]</div>
+
+<p>第一纪元、第一之战时，当影子首度拉长时，他站了起来。在末日燃烧的灰烬之中，他的灵魂被地狱之火烧出水泡，污染的难以辨识，他选择了永恒折磨之路。他在无尽的怨恨之中找不到宁静；他以沸血洗净了暗影平原，并寻找冤枉他的暗黑领主复仇。他戴上夜之哨兵的皇冠，尝过他的剑梢的人都叫他……毁灭战士。</p>
+<div align="right">——地狱碑文Ⅰ [DOOM 2016]</div>        
+
+<p>Tempered by the fires of Hell, his iron will remained steadfast through the passage that preys upon the weak. For he alone was the Hell Walker, the Unchained Predator, who sought retribution in all quarters, dark and light, fire and ice, in the beginning and the end, and he hunted the slaves of Doom with barbarous cruelty; for he passed through the divide as none but demon had before.</p>
+<div align="right">——Slayer's Testament:Ⅱ [DOOM 2016]</div>
+
+<p>他的钢铁意志经过地狱之火冶炼，通过了弱肉强食的考验。他是地狱行者、不受束缚的掠夺者，欲使所有罪人得到报应，穿梭光明、火焰与冰雪，贯彻始终，以无情残忍的态度狩猎所有毁灭的奴隶；有如恶魔一般，视两届之间的间隔如无物。</p>
+<div align="right">——地狱碑文Ⅱ [DOOM 2016]</div>        
+
+<p>And in his conquest against the blackened souls of the doomed, his prowess was shown. In his crusade, the seraphim bestowed upon him terrible power and speed, and with his might he crushed the obsidian pillars of the Blood Temples. He set forth without pity upon the beasts of the nine circles. Unbreakable,  incorruptible, unyielding, the Doom Slayer sought to end the dominion of the dark realm.</p>
+<div align="right">——Slayer's Testament:Ⅲ [DOOM 2016]</div>
+
+<p>他征服毁灭者黑暗灵魂的旅途中，展现了无畏精神。在这场征途，六翼天使赐给了偌大的力量与速度，他借着神力砸毁了血之神庙的黑曜石之柱。他不带一丝怜悯地追杀九届的野兽。毁灭战士无坚不摧、绝不退让，目标使终结黑暗领域的统治。</p>
+<div align="right">——地狱碑文Ⅲ [DOOM 2016]</div>
+
+<p>The age of his reckoning was uncounted. The scribes carved his name deep in the tablets of Hell across eons, and each battle etched terror in the hearts of the demons. They knew he would come, as he always had, as he always will, to feast on the blood of the wicked. For he alone could draw strength from his fallen foes, and ever his power grew, swift and unrelenting.</p>
+<div align="right">——Slayer's Testament:Ⅳ [DOOM 2016]</div>
+
+<p>他受到惩罚的年数难以计算。书记官将他的名字深深刻在地狱的石碑上，经过数世纪皆不磨灭，每场战争都会将恐惧烙印于恶魔心中。它们知道他终究会浅蓝，不论是往昔或是未来，他终究会前来吞噬邪恶之血。只有他有能力汲取手下败将的能量，让他变得更强大、敏捷与无情。</p>
+<div align="right">——地狱碑文Ⅳ [DOOM 2016]</div>
+
+<p>None could stand before the horde but the Doom Slayer. Despair spread before him like a plague, striking fear into the shadow-dwellers, driving them to deeper and darker pits. But from the depths of the abyss rose The Great One, a champion mightier than all who had come before. The Titan, of immeasurable power and ferocity. He strode upon the plain and faced the Doom Slayer, and a mighty battle was fought on the desolate plains. The Titan fought with the fury of the countless that had fallen at the Doom Slayer’s hand, but there fell the Titan, and in his defeat the shadow horde were routed.</p>
+<div align="right">——Slayer's Testament:Ⅴ [DOOM 2016]</div>
+
+<p>仅有毁灭战士能与成群的恶魔匹敌。绝望在他面前如瘟疫一般散布，让影居者内心生起恐惧，逃往更加深暗的洞窟。恐怖大王从深渊现身，力量之大，前人根本无法比拟。他就是拥有无穷力量与神速的泰坦。他在平原上跨步前进，来到毁灭杀手面前，一场大战便于荒芜的平原上展开。泰坦汇聚了无数毁灭战士的手下败将的愤怒，最后却倒地不起，随着泰坦的坠落，影居者大军就此崩溃。</p>
+<div align="right">——地狱碑文Ⅴ [DOOM 2016]</div>
+
+<p>And in his terrible rancor between worlds and through time, the Hell Walker found the wretch who shall not be named, but in his heresy was loyal to his evil cause. The wretch adorned the Doom Slayer in a mighty armor, wrought in the forges of Hell, impenetrable and unyielding. With sword and shield of adamantine strength, the Doom Slayer set to banishing all that were left unbroken by his savagery to the void.</p>
+<div align="right">——Slayer's Testament:Ⅵ [DOOM 2016]</div>
+
+<p>靠着他跨越空间与时间的感应力，地狱行者发现了不可名的恶者，但恶者的异端邪说崇拜的正是毁灭战士的猎魔行动。恶者赐予了毁灭战士由地狱铸造的无敌盔甲，坚不可摧。有了坚固无比的剑与盾，毁灭战士踏上征途，要惩罚所有侥幸逃过一劫的恶魔，将它们放逐到虚空。</p>
+<div align="right">——地狱碑文Ⅵ [DOOM 2016]</div>
+
+<p>Yet as the mighty Titan fell and dread engulfed the armies of Doom, the demon priests of the Blood Temples laid a trap to capture this scourge of Hell. Insatiable, even by the vanquishing of the Great One, the Hell Walker sought prey in the tombs of the Blood Keep. And blinded by his fervor, the lure drew him in. The priests brought down the temple upon the Doom Slayer, and in his defeat entombed him in the cursed sarcophagus. The mark of the Doom Slayer was burned upon his crypt, a warning to all of Hell that the terror within must never be freed. There he lies still, and ever more, in silent suffering.</p>
+<div align="right">——Slayer's Testament:Ⅶ [DOOM 2016]</div>
+
+<p>但当伟大的泰坦倒地、恐惧吞噬了毁灭之军时，血之神庙的恶魔祭司设下了陷阱，以期捕捉这个地狱中祸乱的根源。击败了伟君泰坦之后仍未满足的地狱行者，进一步前往摧毁鲜血堡垒的坟墓。此役祭司们不惜将神庙连同毁灭战士一起摧毁，而被热血冲昏了头的他也不慎落入了这个陷阱。这次败北使他被封印于诅咒的石棺中。毁灭战士的印记被烙印于暮室之上，以警告所有地狱居民绝不能释放里面那令人恐惧的生物。他因此被困于石棺中，无止境地在一篇寂静中受苦。</p>
+<div align="right">——地狱碑文Ⅶ [DOOM 2016]</div>
+
       
     </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
-    <ul class="card-archive-list">
+  
+  
+
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2026/02/">
-            <span class="card-archive-list-date">
-              February 2026
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/19/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/02/19/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-02-19 15:45:23" itemprop="dateCreated datePublished" datetime="2026-02-19T15:45:23+08:00">2026-02-19</time>
             </span>
-            <span class="card-archive-list-count">3</span>
-          </a>
-        </li>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <li class="card-archive-list-item">
-          <a class="card-archive-list-link" href="/archives/2026/01/">
-            <span class="card-archive-list-date">
-              January 2026
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/02/17/Convolution/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/02/17/Convolution/" class="post-title-link" itemprop="url">Convolution</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-02-17 20:05:31" itemprop="dateCreated datePublished" datetime="2026-02-17T20:05:31+08:00">2026-02-17</time>
             </span>
-            <span class="card-archive-list-count">2</span>
-          </a>
-        </li>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-19 16:09:16" itemprop="dateModified" datetime="2026-02-19T16:09:16+08:00">2026-02-19</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-    </ul>
-  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Website Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article Count :</div><div class="item-count">5</div></div><div class="webinfo-item"><div class="item-name">Unique Visitors :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Page Views :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-02-19T08:18:07.795Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By John Doe</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
+          <ol>
+<li><p>问题引入</p>
+<p>考虑一个实际问题，现在我们有电路、麦克风、音箱等系统。我们不知道其内部构造，然而，我们知道这些系统为<strong>线性时不变系统（Linear Time-Invariant System，LTIS）</strong>，满足下列<strong>性质</strong>：</p>
+<ul>
+<li><p>线性</p>
+<ul>
+<li>齐次性：假设<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>为LTI系统的输入，其对应的输出为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.686ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1629 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(490,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(879,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1240,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，则若<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="6.684ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2954.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g><g data-mml-node="mo" transform="translate(743.2,0)"><path data-c="B7" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"></path></g><g data-mml-node="mi" transform="translate(1243.4,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(1815.4,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(2204.4,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(2565.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>为LTI系统的输入，其输出为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="6.499ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2872.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z"></path></g><g data-mml-node="mo" transform="translate(743.2,0)"><path data-c="B7" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"></path></g><g data-mml-node="mi" transform="translate(1243.4,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(1733.4,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(2122.4,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(2483.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>。</li>
+<li>可叠加性：假设<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.859ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2147.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="mo" transform="translate(1008.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1397.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1758.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.859ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2147.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(1008.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1397.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1758.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>为LTI系统的输入，其对应的输出分别为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.673ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2065.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(523,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="mo" transform="translate(926.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1315.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1676.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.673ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2065.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(523,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(926.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1315.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1676.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，则若<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="12.483ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 5517.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="mo" transform="translate(1008.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1397.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1758.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2369.8,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="msub" transform="translate(3370,0)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(4378.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(4767.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(5128.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>为LTI系统的输入，其输出为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="12.112ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 5353.6 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(523,-150) scale(0.707)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g><g data-mml-node="mo" transform="translate(926.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1315.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1676.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2287.8,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="msub" transform="translate(3288,0)"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(523,-150) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(4214.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(4603.6,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(4964.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>。</li>
+</ul>
+</li>
+<li><p>时不变性</p>
+<p>​    假设<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>为LTI系统的输入，其对应的输出为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.686ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1629 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(490,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(879,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1240,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，则若<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="7.806ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3450.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1544.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(2544.4,0)"><path data-c="1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path></g><g data-mml-node="mo" transform="translate(3061.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>为LTI系统的输入，则其输出为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="7.621ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3368.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(490,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(879,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1462.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(2462.4,0)"><path data-c="1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path></g><g data-mml-node="mo" transform="translate(2979.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>。</p>
+</li>
+</ul>
+<p><strong>现在给定系统的输入<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，问系统输出<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.686ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1629 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(490,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(879,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1240,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>为多少？</strong></p>
+</li>
+<li><p>信号的分解</p>
+<p>对于任意的信号<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，其可用冲激信号进行分解：</p>
+<script type="math/tex; mode=display">
+x(t)=\int_{-\infty}^{\infty} x(\tau)·\delta(t-\tau) \, d\tau</script><p>上式表明，信号<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>可以表示为许多个强度为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="4.224ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1867 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path></g><g data-mml-node="mo" transform="translate(1478,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>的冲激函数<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="7.517ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3322.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FF" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></g><g data-mml-node="mo" transform="translate(444,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(833,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1416.2,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(2416.4,0)"><path data-c="1D70F" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path></g><g data-mml-node="mo" transform="translate(2933.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>表示，记</p>
+<script type="math/tex; mode=display">
+q(t)=x(\tau)·\delta(t-\tau)</script></li>
+<li><p>系统响应</p>
+<p>由<strong>LTI系统的性质</strong>和<strong>信号的冲激函数分解</strong>，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>经过系统输出<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.686ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1629 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(490,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(879,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1240,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>可以表示为：</p>
+<script type="math/tex; mode=display">
+y(t)=\int_{-\infty}^{\infty} F(q(t)) \, d\tau</script><p>其中，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="7.072ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3126 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g><g data-mml-node="mo" transform="translate(749,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1138,0)"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mo" transform="translate(1598,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1987,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(2348,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2737,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>表示信号<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.618ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1599 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mo" transform="translate(460,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(849,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1210,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>经过系统的输出，而<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.618ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1599 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45E" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mo" transform="translate(460,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(849,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1210,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>是个冲激函数，设系统对<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.581ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1583 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FF" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></g><g data-mml-node="mo" transform="translate(444,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(833,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1194,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>的输出为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.88ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1715 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g><g data-mml-node="mo" transform="translate(576,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(965,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1326,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，则由<strong>LTI系统的性质</strong>:</p>
+<script type="math/tex; mode=display">
+F(q(t))=x(\tau)·h(t-\tau)</script><p>则：</p>
+<script type="math/tex; mode=display">
+y(t)=\int_{-\infty}^{\infty} x(\tau)·h(t-\tau) \, d\tau</script><p>记上式为：</p>
+<script type="math/tex; mode=display">
+y(t)=x(t)*h(t)</script><p>称为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>和<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.88ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1715 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="210E" d="M137 683Q138 683 209 688T282 694Q294 694 294 685Q294 674 258 534Q220 386 220 383Q220 381 227 388Q288 442 357 442Q411 442 444 415T478 336Q478 285 440 178T402 50Q403 36 407 31T422 26Q450 26 474 56T513 138Q516 149 519 151T535 153Q555 153 555 145Q555 144 551 130Q535 71 500 33Q466 -10 419 -10H414Q367 -10 346 17T325 74Q325 90 361 192T398 345Q398 404 354 404H349Q266 404 205 306L198 293L164 158Q132 28 127 16Q114 -11 83 -11Q69 -11 59 -2T48 16Q48 30 121 320L195 616Q195 629 188 632T149 637H128Q122 643 122 645T124 664Q129 683 137 683Z"></path></g><g data-mml-node="mo" transform="translate(576,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(965,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1326,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>的<strong>卷积</strong>。</p>
+</li>
+<li><p>频域</p>
+<p>通过<strong>LTI系统的性质</strong>和<strong>信号的冲激函数分解</strong>，我们知道在<strong>时域</strong>上，对于一个输入<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，输出<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.686ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1629 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(490,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(879,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1240,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>的表达式就如上式所示。然而，计算量可能比较大，我们也不知道到底系统对<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="3.871ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 1711 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(961,0)"><path data-c="1D461" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path></g><g data-mml-node="mo" transform="translate(1322,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>做了什么？</p>
+<p>通过<strong>傅里叶变换</strong>，我们可以把<strong>时域</strong>上的信号转换到<strong>频域</strong>上，可以从定义上<strong>证明</strong>，<strong>时域上的卷积对应频域上的乘积</strong>，因此有：</p>
+<script type="math/tex; mode=display">
+Y(w)=X(w)·H(w)</script><p>LTI系统满足上述结论。此外，另一方面，可以从<strong>LTI系统的复指数响应性质</strong>，<strong>印证</strong>上述结论。</p>
+<p>LTI系统的复指数响应性质表示为，<strong>复指数信号</strong>为LTI系统的<strong>特征基</strong>，即</p>
+<script type="math/tex; mode=display">
+y(t)=H(w)·e^{jwt}</script><p>而复指数信号正是傅里叶变换中的基，傅里叶变换把原信号分解成了许多个复指数信号，系数为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.308ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2346 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mo" transform="translate(852,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1241,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(1957,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>。由<strong>LTI系统的性质</strong>，原信号通过LTI系统，就是LTI系统作用与复指数信号，就是对每个复指数信号乘以<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.389ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2382 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43B" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mo" transform="translate(888,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1277,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(1993,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>，因此系数变为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="12.331ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 5450.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D43B" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="mo" transform="translate(888,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1277,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(1993,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(2604.2,0)"><path data-c="B7" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"></path></g><g data-mml-node="mi" transform="translate(3104.4,0)"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mo" transform="translate(3956.4,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(4345.4,0)"><path data-c="1D464" d="M580 385Q580 406 599 424T641 443Q659 443 674 425T690 368Q690 339 671 253Q656 197 644 161T609 80T554 12T482 -11Q438 -11 404 5T355 48Q354 47 352 44Q311 -11 252 -11Q226 -11 202 -5T155 14T118 53T104 116Q104 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 293 29 315T52 366T96 418T161 441Q204 441 227 416T250 358Q250 340 217 250T184 111Q184 65 205 46T258 26Q301 26 334 87L339 96V119Q339 122 339 128T340 136T341 143T342 152T345 165T348 182T354 206T362 238T373 281Q402 395 406 404Q419 431 449 431Q468 431 475 421T483 402Q483 389 454 274T422 142Q420 131 420 107V100Q420 85 423 71T442 42T487 26Q558 26 600 148Q609 171 620 213T632 273Q632 306 619 325T593 357T580 385Z"></path></g><g data-mml-node="mo" transform="translate(5061.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>。</p>
+</li>
+<li><p>二维的卷积</p>
+<p>上述卷积建立在<strong>时域</strong>（一维函数上）上，<strong>二维函数上的卷积</strong>定义为：</p>
+<script type="math/tex; mode=display">
+f(x,y)*g(x,y)=\int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(u, v) \, g(x - u, y - v) \, du \, dv</script></li>
+<li><p>图像问题</p>
+<p>现在又有另一个问题，给一张图片，我们想要实现某些效果（模糊、锐化等）。图像是二维的（离散的，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="6.413ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2834.7 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g><g data-mml-node="mo" transform="translate(550,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(939,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(1511,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(1955.7,0)"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(2445.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>），一种比较容易想到的方法是对图片进行某种“操作”或“运算”，来实现这些效果。因此，现在的问题是，<strong>如何设计这个“运算”呢</strong>？</p>
+<p>回到<strong>二维卷积</strong>，我们知道数学上已经有了“<strong>卷积</strong>”这个运算，该运算具有良好的性质：</p>
+<p><strong>空间域上的卷积等于频域上的乘积</strong></p>
+<p>因此，卷积给我们提供了<strong>计算上的便利</strong>以及看待问题的新的角度：<strong>频域</strong></p>
+<p>于是，我们使用“<strong>卷积</strong>”这个运算，去实现上面的效果。为了实现上面的效果我们需要一个和原图片“卷积”的“<strong>东西</strong>”，因此，我们设计了一个“<strong>东西</strong>“去和原图片做卷积，该”<strong>东西</strong>“即被称为”<strong>卷积核</strong>“。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/01/23/DOOM_Misc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/23/DOOM_Misc/" class="post-title-link" itemprop="url">DOOM_Misc</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-23 23:00:48" itemprop="dateCreated datePublished" datetime="2026-01-23T23:00:48+08:00">2026-01-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-17 22:50:51" itemprop="dateModified" datetime="2026-02-17T22:50:51+08:00">2026-02-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Kadingir-Sanctum（卡丁格圣所）"><a href="#Kadingir-Sanctum（卡丁格圣所）" class="headerlink" title="Kadingir Sanctum（卡丁格圣所）"></a>Kadingir Sanctum（卡丁格圣所）</h1><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/kadingir.jpg?raw=true" alt="Kadingir Sanctum"></p>
+<p>The Blood Keep, also referred to as the Kadingir Sanctum, is a sprawling network of tunnels, catacombs and temples that connect the wasteland Umbral Plains to the Great Steppe. It is believed that this area serves as a place of worship and vilification as both hero and enemy can be found buried in tombs throughout the region.</p>
+<p>The area is inhabited by all manner of demons, including The Possessed, the Unwilling, Hell Knights and other non-classified creatures. The Project Lazarus Manned Expedition (MTC 2145/128), uncovered one tomb of particular interest. The temple was adorned with powerful holding runes and unique relics. Despite the complete loss of human life on the expedition, the relics were successfully returned by Scout-Bots to the Lazarus Labs for processing and study.</p>
+<p>Unfortunately, records disappeared after the relics were sent to the Lazarus Labs and they are now presumed lost.</p>
+<p>鲜血堡垒也被称作卡丁格圣所，这是一个由无数隧道、墓穴与神庙组成的网路，并连接荒芜的暗影平原与大荒原。拒信这里既是崇拜英雄的圣地，同时也是唾弃敌人的鞭尸场，因为英雄与敌人的墓塚遍布整个区域。</p>
+<p>本地栖息有各种恶魔，包括恶灵、怨灵、丧魂、地狱骑士与其他未经分类的生物。探勘队在拉萨路探勘计划过程中（火星历2145年128日）发现了一个特别的坟墓，这个神庙里装饰了满满的符文和独特的圣物。在折损无数探勘队员的性命之后，这些遗物终于由探勘机器人带回拉萨路实验室，进行更进一步的检验和研究。</p>
+<p>很不幸的，在这些遗物被送到拉萨路实验室后，相关纪录就消失了，现在这些有关纪录被认定为遗失的状态。</p>
+<h2 id="Titan’s-Realm（泰坦魔域）"><a href="#Titan’s-Realm（泰坦魔域）" class="headerlink" title="Titan’s Realm（泰坦魔域）"></a>Titan’s Realm（泰坦魔域）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/titan.jpg?raw=true" alt="Titan&#39;s Realm"></p>
+<p>After the disastrous Project Lazarus Manned Expedition (MTC 2145/128), it was decided to avoid Kadingir Sanctum until the environment was more conductive to human exploration. The second Project Lazarus Manned Expedition (MTC 2148/177) was changed to a new location - an area referred to as “the Great Steppe”. The Corrax tablets describe this area in detail:</p>
+<p>“Through the Titan’s Realm and down, down to the Great Steppe where the trophies of victory are kept through the ages. Their false idols banished to a wasteland. Their towers fallen, their foundations ground to dust, their hallowed halls kept empty as cruel reminders that civilizations shall fall before the ascension of the great ones.”</p>
+<p><strong>A Pilgrimage</strong></p>
+<p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/pri.jpg?raw=true" alt="A Pilgrimage"></p>
+<p>If you are on the of the lucky disciples who will get to experience a pilgrimage to Hell, there are some preparations you must make for your journey. You must make sure all of your affairs are in order before leaving. Donate all of your belongings, excluding any security controlled materials, to a Tier 2 advocate and record any final logs you may wish to make. Your savings assets will be used to fund additional UAC research. For the expedition itself, you may wish to consider sedation; advocates can get overwhelmed during their transition and a medically administered balancing agent can help ease the excitement. Lastly, prepare your mind for the wonders you will experience. Seeing the remains of a Titan is an experience that will buckle the knees of the most steadfast advocate. If you are lucky, you may even get to see a live Titan. If you do, you must record the sighting immediately and hand your storage devices to a Scout-Bot for safety. It is not known if any Titan still inhabit the Great Steppe, so if you get the chance to be a sacrifice to one of these massive beasts, take it!</p>
+<p>由于首次的拉萨路计划人工考察团（火星历2145年128日）的严重折损，拉萨路计划团队决定在环境适合人类探索以前不要进入卡丁格圣所。第二次拉萨路计划人工考察团（火星历2148年177日）的地点改至一个被名为“大荒原”的地域。精钢碑文详细描述了这个地区：</p>
+<p>”经过泰坦魔域后南下，直到长久保存战利品的大荒原。它们的异端神祗被放逐到荒地、塔楼崩毁、地基灰飞烟灭，它们的圣殿空无一物，这一切残酷地揭示——文明会在恐怖大王矗立于大地之时衰落。”</p>
+<p><strong>地狱行脚</strong></p>
+<p>如果你是有幸到地狱朝圣的信徒，你必须为自己的旅程做些准备。你必须打理好后事。比如捐赠你除了机密件以外所有的身家财产给第二阶拥护者，并且在必要时录下最后的日志。你的存款与资产将会被用来资助其他UAC研究。在远征行程中，你可能会需要服用镇静剂；拥护者在“变异”的过程中可能会体验难以承受的生理和心理刺激，因此服用辅助药物可以帮助你不至于过度亢奋。最后，做好心理建设，迎接即将体验的奇观。就算是心智坚定的拥护者，见到泰坦的遗骸后也会忍不住跪下来。如果幸运的话，你还可以遇见活生生的泰坦。如果遇见了，你必须将画面记录下来，并将存储装置交给侦察机器人保管。泰坦是否还栖息在大荒原仍是个未解之谜，所以你若有机会成为进贡给这些巨大怪兽的牺牲品，就好好把握！</p>
+<h2 id="The-Necropolis（死者之都）"><a href="#The-Necropolis（死者之都）" class="headerlink" title="The Necropolis（死者之都）"></a>The Necropolis（死者之都）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/necro1.jpg?raw=true" alt="The Necropolis"></p>
+<p>When the expedition of 2148 reached the Great Steppe, massive structures were found - unlike any other edifices yet seen in Hell. It is believed that these structures were native to this area, absorbed into Hell when the civilization was conquered. The construction bears resemblance to many known earthly architectural movements, and several unknown (potentially extra-terrestrial) designs. Most of the structures appear to be religious or spiritual design, and have been corrupted to pay homage to the dark magic of Hell.</p>
+<p>Although the expedition ended in a total loss of human life, it was considered a resounding success not only for the vast amount of data recovered by the Scout-Bots, but also for returning the petrified remains of a massive shadow lord believed to be an ancient Baalgar demon.</p>
+<p>The presence of such high ranking demons in The Necropolis suggests that the area holds some item of extreme importance (or vulnerability) to the demons. Current research suggests this may be the lost artifact known as the Crucible. However, no further expeditions to this area have been planned under explicit instruction from Olivia Pierce.</p>
+<p><strong>Why We Must</strong></p>
+<p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/necro2.jpg?raw=true" alt="Why We Must"></p>
+<p>Rest is important if you are to be a productive advocate. However, down time does not need to be wasted time. When not working on the Lazarus Project, take some time to think about what comes after we open the gates. Where does this devotion and hard work lead? Why are we doing this?</p>
+<p>To answer that, you must picture yourself transported to the wide open Umbral Plains, or the steps of the great cathedrals of Argent D’Nur, or the glassy shores of the Lake of Fire. Imagine yourself worshipping before the Icon of Sin, in awe of its splendor even as it sleeps till the Call of Ages comes. Envision chanting the names of dark lords in the correct order, empowering them with your rote learning. Fantasize about how it will feel to sense the caress of the Bukavac as it rises from the blood pools of Angrax and strangles the life out of you.</p>
+<p>Now you can return to work advocate, for now you know why we do this.</p>
+<p>2148年探勘行动进入大荒原，发现大量地狱未曾出现过的大型建筑，团队判定该建筑结构是从此地发源，文明败坏后才被划入地狱领地内。这些建筑的外型和地球建筑类似，但也有少数外观较为陌生（可能是外星设计）。多数建筑似乎有祭祀或是宗教用途，后来也多为地狱黑暗魔法的祭奠场所。</p>
+<p>虽然该次探勘的参与人员全数死亡，但此次探勘的成果仍然丰硕。侦察机器人不仅带回许多有价值的数据，也将巨大暗影领主的石化遗骸成功带回，这位领主很有可能是古老的巴尔卡恶魔。</p>
+<p>在死者之都发掘如此高阶的恶魔，也意味着该地区仍保有对恶魔来说相当重要（或令他们恐惧）的物品。目前的研究显示，该物品很有可能是名为魔埚的远古遗物。但是奥莉薇雅·皮尔斯至今并未在该地区部署任何新的探勘计划。</p>
+<p><strong>为何而行</strong></p>
+<p>作为有生产力的拥护者，休息是很重要的。然而，休息时间也不用被浪费。没有进行拉萨路计划的工作时，你可以花些时间思考打开地狱大门以后，会发生什么事？这样的奉献与努力引导我们到了何处？我们为何这样做？</p>
+<p>要回答这个问题，你必须想象自己身处广大的暗影平原、奴尔之环的大教堂中，或是火湖的闪光湖岸。想象自己拜倒在罪恶圣像之前，赞叹这个尽管在世纪大呼唤前仍在沉睡，却依然十分壮观的偶像。想象自己用正确的次序吟诵暗黑领主的名号，并如何使平日的苦学成为他们的力量。想象跃出阿格拉斯血池的布卡瓦如何爱抚你，再让你的生命窒息。</p>
+<p>拥护者，现在你可以回去工作了，因为你已经明白我们为何而努力。</p>
+<h2 id="Argent-D’Nur"><a href="#Argent-D’Nur" class="headerlink" title="Argent D’Nur"></a>Argent D’Nur</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/dnur1.jpg?raw=true" alt="Argent D&#39;Nur"></p>
+<p>While some intelligence has been directly retrieved from Argent D’Nur, most of the details we have regarding this location have been extrapolated from decoded tablets and scriptures. Limited data from remote collection and information decrypted from the Corrax tablets suggests that this area is the corrupted ruins of a “lost realm” - a world that has been entirely conquered and absorbed into the Hell dimension. The battle that was fought to claim this area is of great significance, as the spread of Hell’s dominion accelerated quickly upon absorption of the region.</p>
+<p>The Hell energy that emanates from this region passes through a dimensional tear, and appears on Mars at the Argent Fracture.</p>
+<p>From the Corrax tablets:</p>
+<p>“All falls before the command of Hell, for our power is absolute, our march to victory inevitable. Before our armies, even the Elemental Wraiths of Argent D’Nur were subjugated. In that great victory the Night Sentinels, protectors of the Wraiths, were betrayed by one of their own, and the wretches wept as we devoured their world and took The Well for our devices. None stand against us, for treachery resides in all things and we shall set it free.”</p>
+<p><strong>A Farewell</strong></p>
+<p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/dnur2.jpg?raw=true" alt="A Farewell"></p>
+<p>Some of you in a previous life may have held childish notions of God and the kingdom of heaven. This ugly representation of a spiritual nirvana was designed to control you, to placate your natural feelings of hate and rage, to subdue your realization of your place in this universe. By embracing science, you took the first steps towards freedom from these intellectual chains. By dedicating yourself to the development of Argent Energy, you cemented your place in the next age.</p>
+<p>Now let us tell you about the real heaven.</p>
+<p>The real kingdom of the gods is a place that you will never reach, and you should never wish to. No human will ever visit the sacred ground of Argent D’Nur, unless they are made a god by the dark lords. Humanity’s only purpose, and reward, is to serve the ascension of the Imperatrix and protect the Crucible. You will be destroyed by the demons, while I will be made a god. My immortality is assured, while you will writhe in perpetual agony at the bottom of the darkest hole in Hell. You will be forgotten. Your life, your loved ones, your achievements and failures are nothing. A blank space on the canvas of time.</p>
+<p>Thank you for your service. May you rot in Hell.</p>
+<p>Olivia Pierce.</p>
+<p>虽然奴尔之环的情报有一部分已经直接在当地取得，但关于此地的面貌，大半仍只能透过解析石碑与雕像来猜想。从精钢碑文解译出来的少许内容指出，本地原本是一个“失落国度”的废墟——一个完全被征服、纳入地狱次元之中的世界。征服此领域的战役具有重大意义，因为地狱大军吸收此地之后，扩张速度便急剧上升。</p>
+<p>此地散发出的地狱能量会穿透次元裂缝，从亚金大裂口出现在火星上。</p>
+<p>精钢碑文上这样记载：</p>
+<p>“万物皆臣服于地狱之令，我等力量至高无上，我等胜利势在必行。奴尔之环的元素妖灵，也已败在我军脚下，此役大胜，系守护妖灵的夜之哨兵遭同胞背叛，其可悲贱民仅能在恸哭之中，坐看我等吞噬其世界，夺取其次元井。我等无人能敌，因为万物之中皆有背叛者，我等将予以解放。”</p>
+<p><strong>告别</strong></p>
+<p>你们当中有些人可能在先前的生活中，对神与天国有着幼稚的见解。这种灵魂极乐世界的概念只是意欲控制你的丑恶设计，用来冷却你对憎恨与愤怒的自然感情，并且控制你对于自身存在的理解。借由拥抱科学，你就踏上从这些智慧枷锁解放的第一步。借由由亚金能源的开发努力，你稳固了自己在下个时代的位置。</p>
+<p>现在告诉你真正的天堂是什么样子。</p>
+<p>诸神实在的国度是你永远无法企及，也永远不该渴求前往的地方。除非黑暗领主将你册封为神明，否则没有人能造访神圣的奴尔之环。人类唯一能拥有的存在意义及恩赐，就是为蜘蛛女帝的升华为竭尽心力，并且保护魔埚。你会被恶魔摧毁，而我会成为神明。他们已经确保了我的不朽，而你将在地狱底部的黑洞里因永恒的痛苦而扭曲。你的生命，你的爱人，你的成就与失败都不算什么，只是时间画布上的空白。</p>
+<p>感谢你的服务，愿你在地狱腐朽。</p>
+<p>奥莉薇雅·皮尔斯</p>
+<h2 id="The-Wraiths"><a href="#The-Wraiths" class="headerlink" title="The Wraiths"></a>The Wraiths</h2><p><strong>Ⅰ</strong></p>
+
+<p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/wrath1.jpg?raw=true" alt="The Wraiths"></p>
+<p>While there have been no confirmed sightings of these creatures, much is known about them as they are revered by the demons and referenced multiple times in all explored areas of Hell. According to scriptures found in the Kadingir Sanctum, the Wraiths are elemental beings that inhabit the realm of Argent D’Nur, a world that was colonized in the First Age of Ascension. The Wraiths were deified by the people of Argent D’Nur and protected by their fiercest warriors, the Night Sentinels. They are believed to have been imbued with a powerful energy.</p>
+<p><strong>Ⅱ</strong></p>
+<p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/wrath2.jpg?raw=true" alt="The Wraiths Ⅱ"></p>
+<p>The Elemental Wraiths, if they do still exist in Argent D’Nur, have no doubt been corrupted by the power of Hell. However, descriptions of the beasts suggest they were terrifying in their own form before any demonization occurred. The protection of these beasts was both a measure to harness the power they generated, and also a defense against them - hence the need for a warrior order to serve as protectors rather than a simple priest caste.</p>
+<p>Several tablets describe the worship of the Wraiths as a necessity to avoid their wrath, and the Ungmar Codex specifically states that “Wraith-Call” (the sign of an approaching Wraith) caused panic and terror among the people of Argent D’Nur. It is also possible that some sacrificial ceremonies were attached to the worship of the Wraiths.</p>
+<p><strong>Ⅲ</strong></p>
+<p><img src="https://github.com/reject123/BlogPicRepo/blob/main/DOOM_Misc/wrath3.jpg?raw=true" alt="The Wraiths Ⅲ"></p>
+<p>Further readings from the Ungmar Codex:</p>
+<p>“The Night Sentinels stood strong against our legions. Conquest of Argent D’Nur, empowered by the Wraith-energy, was foiled at every turn. Yet in our darkest hour came a lowly Hell priest, Deag Grav, and in his guidance a weakness in a heathen of the Night Sentinels was found.</p>
+<p>The bargain was struck thus: for the return of the Betrayer’s only son, lost on the battlefield, Deag Grav must be taken to the source of their power, the Elemental Wraiths. Lead [sic] there by the wretched Betrayer, Deag Grav and his cabal set a curse upon the Wraiths as they slept, and used their essence for our own devices. With the power of the Wraiths they formed The Well, that which brings us upon our enemies. Thus, the city of Argent and their false gods fell under the unholy might of the Hell priests.</p>
+<p>For his payment, the Betrayer’s son was returned to him in our form, and the Icon of Sin was brought upon the heathens. His vengeance was swift and merciless, for the wages of treachery are suffering.</p>
+<p>With the fall of Argent D’Nur, their realm was taken into ours, their temples and runes, their carved rock and edifice, all was absorbed into our realm and taken as trophies of our triumph.”</p>
+<p><strong>一</strong></p>
+<p>虽然目前还没有人目击过这类生物，但关于他们的资讯却毫不匮乏，因为它们收到恶魔的尊崇，且在目前已探索的地狱各区中经常受到提及。根据卡丁格圣所的文献记载，妖灵是居住在奴尔之环国度的元素体。奴尔之环是升华第一纪元时被殖民的国度，其人们视妖灵为神祗，由最强悍的战士“夜之哨兵”负责守护。据信妖灵体内含有一个强大的能源。</p>
+<p><strong>二</strong></p>
+<p>元素妖灵如果存在与奴尔之环中，必定已遭到了地狱之力的腐化。然而从这种妖物的记载当中，可以看出它们尚未恶魔化之前就已经十分可怖。保护此类妖物，既时为了驾驭其产生之能量，同时也是为了抵御它们——因此必须要有战士位阶者担任保护者，而不能单纯由祭司位阶者负责。</p>
+<p>多块碑文提及祭祀妖灵的仪式，目的在于回避其愤怒，安格马文书之中也特别指出“妖灵呼声”（妖灵即将出现的预兆）会引发奴尔之环的人们惊慌恐惧。祭祀妖灵的过程中，也可能包括一些牺牲祭品的仪式。</p>
+<p>安格马文书之中还如此记载：</p>
+<p>”夜之哨兵顽强抵抗我们的军团。征服奴尔之环的作战中，因妖灵能源之力强大，是我们屡战屡败。然而正值我等困窘之际，出现了一名卑微的地狱祭司，名为狄亚格·古拉夫。在他的引导下，我们招降了一名夜之哨兵的异教徒。</p>
+<p>于是我们与此人达成协议：我们将归还此一叛徒在战场上失去的独子，条件是他必须带狄亚格·古拉夫前往诸力之源：元素妖灵。卑贱的叛徒带领狄亚格·古拉夫及其党羽在沉睡的妖灵身上施下诅咒，使其能量能为我们所用。他们利用妖灵能量打造了次元井，让我们能够直捣敌营核心。于是，亚金之都及其伪神，皆败于地狱祭司的邪威之下。</p>
+<p>我们将叛徒之子以我们的形式归还给他作为报仇，然后罪恶圣像便降临于异教徒之上。他的复仇快而无情，因为背叛的代价便是受苦。</p>
+<p>奴尔之环沦陷后，其国土便成为我们的领地，其神庙与符文、石碑与建筑，都纳入我们的国度之中，成为凯旋的战利品。“</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h1><p><a target="_blank" rel="noopener" href="https://doom.fandom.com/wiki/Codex">Codex | Doom Wiki | Fandom</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/01/21/Monsters_DOOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/01/21/Monsters_DOOM/" class="post-title-link" itemprop="url">DOOM Monsters</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2026-01-21 16:57:31" itemprop="dateCreated datePublished" datetime="2026-01-21T16:57:31+08:00">2026-01-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-02-17 22:36:35" itemprop="dateModified" datetime="2026-02-17T22:36:35+08:00">2026-02-17</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="DOOM-2016"><a href="#DOOM-2016" class="headerlink" title="DOOM 2016"></a>DOOM 2016</h1><h2 id="The-Possessed（恶灵）"><a href="#The-Possessed（恶灵）" class="headerlink" title="The Possessed（恶灵）"></a>The Possessed（恶灵）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/ThePossessed.png?raw=true" alt="ThePossessed.png"></p>
+<p>The Possessed are created in a Lazarus Wave event, a phenomenon was first discovered by Dr.Olivia Pierce during her Lazarus Project. While most victims exposed to Argent biowaves will expire without further effect, some subjects will absorb traces of Argent Energy and enter a state of posthumous vigor. Despite necrosis of the internal organs (with the exception of the brain), the victim continues to animate and exhibit a low order of sentience for weeks or even months after clinical death. Posthumous brain activity in the Possessed is limited to instinctive behavior. The Possessed are known to be territorial when confronted by the living. When isolated, they will often enter a dormant state for extended periods of time. They will stand, unmoving, for days or weeks at a time until presented with a live food source, or threatened by a predator.</p>
+<p>An interesting behavior has been seen when the Possessed are held in small groups. They will drag human corpses to a central location within their holding pens, and then perform a silent ritual around the pile of bodies. The resulting ceremonial site appears to be the initial stages of a Gore Nest. These actions must be driven by a telepathic communication with higher ranking demons, as there is no local brain activity that could manage such choices. The Possessed will perform these tasks even when limbs are removed or Pavlovian pain responders are implanted in their cortex, further cementing the theory that they are unwilling slaves performing an integral part of the life cycle of the demons. The Possessed create the birthing ground for new demons, and upon expiration are themselves used as fertilizer for the Gore Nest.</p>
+<p>恶灵是由拉萨路能量波所创生，而首先发现这个现象的就是拉萨路计划的奥莉薇雅·皮尔斯博士。多数暴露在亚金生化波下的受害者会在毫无副作用的情况下被消灭，但有些个体会吸收少许亚金能量，转化为活死状态。尽管受害者的内部器官除大脑以外都会腐坏，它们会在临床死亡后持续活动，并展现低程度的知觉长达数周数月。恶灵复活以后的大脑活动仅限于本能。恶灵在遇到活体时会展现地域性。独立生存时，则会经常进入长时间的潜伏期。它们会站着不动长达数天数周，直到发现活体食物来源或受到掠食者威胁为止。</p>
+<p>在恶灵的小型群体中，亦发现一个有趣的现象，它们会将尸体集中拖到一个地点，并无声地对着堆叠的尸体举行某种仪式。透过这个仪式似乎就能制造出最初阶段的血角之巢。这些行为肯定是受到更高等级的恶魔，以心灵沟通影响而星城，似乎没有其他大脑活动可以解释该行为。即便恶灵的大脑已经被移除，或是巴夫洛夫制约行为已经深植大脑皮层，它们还是会执行这些仪式（后来进一步证实，它们并非自愿成为恶魔生成的重要帮手）。恶灵创造了恶魔新生的地点，最终在任务达成后成为血角之巢的营养来源。</p>
+<h2 id="Possessed-Soldier（恶灵士兵）"><a href="#Possessed-Soldier（恶灵士兵）" class="headerlink" title="Possessed Soldier（恶灵士兵）"></a>Possessed Soldier（恶灵士兵）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/PossessedSoldier.png?raw=true" alt="PossessedSoldier"></p>
+<p>While Lazarus Wave exposure does effectively wipe out any vestige of human behavior from most of its victims, some subjects continue to display tactical cognizance posthumously. As with Possessed Engineers, this does not appear to be random. If an individual has training in combat (as part of the UAC Military) the Lazarus Wave event will transform them into more than mere slaves. This anomaly further supports the theory that there is some form of genetic coding embedded within the Lazarus Wave particles which governs the outcome of Lazarus Wave exposure on a per-case basis.</p>
+<p>拉萨路能量波虽然能有效抹消多数受害者任何残余的人类行为模式，有些人死后仍然表现出战略意识。以恶灵工兵来说，这种意识看来不是随机产生的。如果个体曾身为UAC士兵受过战斗训练，拉萨路能量波会将它们转变为比奴隶更有用处的单位。这种异变现象支持一个理论，即拉萨路能量波粒子内带着某种基因编码，而这基因编码影响拉萨路能量波对不同个体造成的结果。</p>
+<h2 id="Possessed-Security（恶灵警卫）"><a href="#Possessed-Security（恶灵警卫）" class="headerlink" title="Possessed Security（恶灵警卫）"></a>Possessed Security（恶灵警卫）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/PossessedSecurity.png?raw=true" alt="PossessedSecurity"></p>
+<p>Possessed Security units exhibit the most complex battle strategies of all possessed humans, including mobile shield advances towards the enemy and firing while in defilade. Possessed Security will also drop their shields to adopt a more accurate firing stance at the cost of lowering their defense.</p>
+<p>A Possessed Security will keep an optimal distance from its target. If the target gets too close, the Possessed Security will attack with a ferocious shield bash then retreat to a preferred engagement range. Possessed Security have only been observed using DS-117 UAC shotgun and shield outfit which suggests that their ranks are exclusively created from members of a special forces military unit called UAC NeoPhalanx. The NeoPhalanx is used exclusively as military defense for remote UAC colonies.</p>
+<p>在所有恶魔化的人类当中，恶灵警卫懂得使用最复杂的战术，包括运用机动护盾靠近敌人，以及躲在遮蔽物后开枪。恶灵警卫也会抛下护盾，以做出命中率更高的射击姿势，代价是防御能力会降低。</p>
+<p>恶灵警卫会维持与目标之间的最佳距离。如果目标太过接近，恶灵警卫会用盾牌猛击目标，再退到更适当的交战距离。从它们使用UAC DS-117型霰弹枪与盾牌就可以看出这群恶灵警卫来自名叫“UAC新方阵”的特种部队。这只特种部队专门负责偏远UAC殖民地的防御。</p>
+<h2 id="Revenant（恶魂）"><a href="#Revenant（恶魂）" class="headerlink" title="Revenant（恶魂）"></a>Revenant（恶魂）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Revenant.png?raw=true" alt="Revenant"></p>
+<p>Revenants are UAC Military operatives that have been methodically transformed into demonic combatants through cybernetic augmentation and repeated Lazarus Wave exposure. The transformation begins by attaching a Multiple Launch Rocket Battery (MLRB) onto each shoulder of the patient, coupled to an Argent-charged neural biochip implanted at the base of the cerebral cortex. The MLRB allows the Revenant to both attack its target with multiple conventional rockets, and also fire mobility boosters located under each MLRB.</p>
+<p>The MLRB implant operation is conducted with the patient in an ante-mortem state and without anesthesia, as it is imperative the patient develops neural recognition of the augments before expiration. Once a neural connection with the implants has been established, the patient is repeatedly exposed to the Lazarus Wave blasts to induce death and transform the subject into a Revenant. As with Hell Soldiers, Revenants exhibit advance combat tactics that include range control, vertical combat governance, and rush tactics.</p>
+<p>During initial development of the Revenant program, a curious side effect of Lazarus Wave exposure was discovered. The Argent Energy held within the plasmatic isotopes of the Lazarus Wave mutates ossein proteins, resulting in rapid skeletal growth. The expansion of the bone matter results in avulsion of the skin and connective tissue. The flesh is literally torn from the bones. As the skeleton continues to grow, the exposed internal organs begin to decompose. After several weeks of intense pain for the patient, the skeletal growth stops - resulting in a 3 meter beast comprised primarily of bone. The height varies depending on patient’s original physiology. Despite this bizarre biological structure, the Revenant appears to bear no ill effects.</p>
+<p>亡魂是UAC军队的战斗员，它们经历了系统化转变、装置仿生机械并多次暴露在拉萨路能量波，进而转化为恶魔战士。转化的第一步是在实验体两侧肩膀分别加装多重火箭发射器（MLRB），并在大脑皮层植入亚金能源驱动的神经生化晶片。亡魂可以利用发射器一次射出多支火箭，也可以启动发射器下的推进器以快速地接近目标。</p>
+<p>我们为临死实验体进行无麻醉的多重火箭发射管（MLRB）移植手术。这是在病患断气前建立神经认知的必要动作。一旦神经连结了移植部件，实验体便会多次暴露在拉萨路能量波的震荡下，让实验题死亡并将其转化为亡魂。与恶灵士兵相较，亡魂能施展更多进阶战术，包括射程控制、垂直战斗管控与速攻战术。</p>
+<p>我们在亡魂计划的开发初期发现，当实验体暴露在拉萨路能量波时会产生一个有趣的副作用。拉萨路能量波中的浆化同位素含有亚金能量，会导致骨蛋白发生突变，使骨骼快速生长。增长的骨头会扯破皮肤与连接组织。说白话一点，实验体的肌肉会直接从骨头上被撤下来，继续成长后还会使暴露的内部器官开始分解。经历数周的剧痛，当实验体的身高约暴涨到三公尺后，其骨骼便停止生长。怪物的最终身高取决于实验体的原始生理状态。除了生理架构以外，亡魂并没有受到其他有害的副作用。</p>
+<h2 id="Unwilling（怨灵）"><a href="#Unwilling（怨灵）" class="headerlink" title="Unwilling（怨灵）"></a>Unwilling（怨灵）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Unwilling.png?raw=true" alt="Unwilling"></p>
+<p>The Unwilling are fully transformed Possessed that have been transported to Hell to serve as shrine worshipers, slave labor for higher level demons, or cannon fodder for battle within Hell.</p>
+<p>怨灵是完全恶魔化的恶灵，它们被送到地狱成为圣陵的信徒、并担任高阶恶魔的奴隶工人，或是沦为地狱内部战争的炮灰。</p>
+<h2 id="Lost-Soul（丧魂）"><a href="#Lost-Soul（丧魂）" class="headerlink" title="Lost Soul（丧魂）"></a>Lost Soul（丧魂）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/LostSoul.png?raw=true" alt="LostSoul"></p>
+<p>These demons are found wandering aimlessly within the temples of Hell as they search for a host to inhabit. When a potential victim is found, they will converge on the target and explode with a blast of Hell energy. Lesser-willed beings weakened by the explosion will then be possessed by the demon and the host’s soul becomes lost in turn. Tablets retrieved from the Corrax suggest that Lost Souls are considered the lowest of the demons - even lower than Imps. Since the wandering nomads, doomed to forever roam the Halls of Hell, thrive on the weakest entities, Lost Souls are despised by the other demons. Despite their lowly status, they should not be underestimated.</p>
+<p>这种恶魔在地狱神庙漫无目的晃荡，寻找寄宿的宿主。如果发现受害者有机可趁，它们会靠近目标并且爆炸。意志不坚的目标会变得脆弱，接着被恶魔附身并驱逐其灵魂。根据从精钢神庙寻获的碑文，丧魂是地狱恶魔中最低下的阶层——甚至不如幼魔。其他恶魔看不起这种注定得无止尽在地狱大厅游荡，只能借由腐生弱者生存的灵魂。虽然为阶很低，它们也不容小觑。</p>
+<h2 id="Imp（幼魔）"><a href="#Imp（幼魔）" class="headerlink" title="Imp（幼魔）"></a>Imp（幼魔）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Imp.png?raw=true" alt="Imp"></p>
+<p>These ferocious and agile demons are found all over Hell, and are often used on the front line in a concerted attack in either dimension. They revel in battle, feeding off their victims, when the hunger takes them.</p>
+<p>Despite their low status among the demon ranks and their seemingly endless numbers, Imps have unique characteristics in battle. Some prefer fighting from an elevated position, while others will rush their target and swipe at them with razor sharp claws. Walls and obstacles offer no defense against Imps as they will leap great heights and easily hang from the surfaces. The Imp is capable of channeling Hell energy through its hands and shaping it into a projectile. As the Imp channels the energy, airborne particles and debris are sucked into the maelstrom to create a condensed, superheated fireball. The mechanics of the Imp’s ranged attacks suggest that they are actually a lower form of the Summoner.</p>
+<p>这种残暴又灵巧的恶魔在地狱随处可见，常常在集体攻击其他次元时上场。它们在战场上狂欢，并在饥饿时噬食手下败将。</p>
+<p>虽然幼魔在恶魔中位阶不高，数量也多，但它们在战斗中各有其风格。有些幼魔偏向在高处攻击，有些幼魔则会冲向目标，用利爪扫击对方。幼魔能从地面跳跃至高处，因此高墙与拒马并没有办法阻挡它们。幼魔能用手转化地狱能量成为抛射弹。幼魔转化能量时，一个漩涡会将悬浮在空中的抛射弹与残余能量聚集起来，凝聚成一个高温火球。幼魔的远距攻击模式显示它们是恶魔召唤师的低阶品种。</p>
+<h2 id="Summoner（恶魔召唤师）"><a href="#Summoner（恶魔召唤师）" class="headerlink" title="Summoner（恶魔召唤师）"></a>Summoner（恶魔召唤师）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Summoner.png?raw=true" alt="Summoner"></p>
+<p>The Summoner, a cunning adversary, is primarily a defensive summoning unit. As the demon-horde swarms the enemy, the Summoner sustains the battle by opening a rift to Hell and calling forth reinforcements. To prevent being overrun by the relentless horde, the Summoner should become a primary target in any battle strategy.</p>
+<p>When directly challenged in combat, the Summoner is capable of channeling Hell energy into an Argent wave. Although this wave kills most humans, an occasional victim will be transformed into The Possessed. Surviving an Argent wave attack is extremely unlikely but does not appear to be random. There is evidence that the Summoner selects the most resilient of combatants for induction to the army of Hell.</p>
+<p>The Lazarus Project has managed to successfully capture several Summoner demons. The imprisonment process requires careful preparation, as a Summoner will immediately launch multiple Argent wave attacks when trapped. To prevent this, Hell energy must be continuously drained from the demon until it is sufficiently sedated. Anatomical study of the Summoner suggests that it is a highly evolved sub-genus of the Imp form.</p>
+<p>恶魔召唤师是个狡诈的对手，是防御型召唤单位的一种。在恶魔大军大批涌向敌军的同时，恶魔召唤师会打开地狱的裂口呼叫更多援军上场。为避免被无情的大军淹没，战斗中应该首先对付恶魔召唤师。</p>
+<p>恶魔召唤师与敌人直接对战时，可以引导地狱能量发生亚金能量波。能量波可杀死多数人类，偶尔也会有人被能量波攻击之后转化为恶灵。虽然人类几乎无法抵抗亚金能量波的攻击，但是那些活下来的人并非侥幸逃生。有证据显示，恶魔召唤师会挑选最能适应战斗的战士加入地狱大军。</p>
+<p>拉萨路计划成功捕获了数只恶魔召唤师。监禁程序需要谨慎准备，因为恶魔召唤师一遭到包围，就会立即发动数道亚金能量波攻击。为防止这种情形，在完全将恶魔迷倒前，必须持续抽出其身上的地狱能量。解剖召唤者结果发现，恶魔召唤师属于幼魔的一种高度进化亚种。</p>
+<h2 id="Hell-Razer（地狱毁灭者）"><a href="#Hell-Razer（地狱毁灭者）" class="headerlink" title="Hell Razer（地狱毁灭者）"></a>Hell Razer（地狱毁灭者）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/HellRazer.png?raw=true" alt="HellRazor"></p>
+<p>The Hell Razer is an astute and tactical foe that will engage enemies from a distance with a powerful beam of unrefined Hell energy. The beam emanates from an arm-like protrusion composed of cartilage and other osseous tissue. Articulation of the cartilage allows the Hell Razer to focus its energy beam into a single charged shot that will obliterate anything that stands in its path.</p>
+<p>Recent dissection of a captured Hell Razer has revealed a remarkable embryogenesis. Between the third and eight week of development, a parasitic Hell Razer matures, the host’s arm ossifies into a beam weapon. Simultaneously, the pyrolyzed host becomes capable of withstanding the extreme temperatures generated during the repeated accumulation of Hell energy. The Hell Razer has not yet been observed outside of Hell and further investigation is planned for the next Tethering Operation.</p>
+<p>地狱毁灭者是足智多谋的敌人，它们会在一定距离外发生充满混沌地狱能量的光束。光束从软骨与骨质组织组成的臂状突出物射出。地狱毁灭者也可以透过软骨关节将能量光束集中成单发充能射击，消灭发射路径上的任何东西。</p>
+<p>最近一份地狱毁灭者的解剖报告解开了该物种发育的重要阶段。在发育期第三周至第八周之间，地狱毁灭者的寄生体会寻找适合的宿主，从宿主体内开始火化。随着地狱毁灭者成熟茁壮，宿主的手臂会硬化成光束武器。同时，体内开始裂解的宿主也能承受地狱能量一再累积的极端温度。目前还没有在地狱以外的地方观察到地狱毁灭者，下个圈捕行动将有进一步的调查计划。</p>
+<h2 id="Cacodemon（巨脑魔）"><a href="#Cacodemon（巨脑魔）" class="headerlink" title="Cacodemon（巨脑魔）"></a>Cacodemon（巨脑魔）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Cacodemon.png?raw=true" alt="Cacodemon"></p>
+<p>Cacodemons are monstrous psionic demons driven by the desire to feed. They display limited intelligence, but are often sent into the fray as their natural size and abilities make them an intimidating weapon for the demon-horde.</p>
+<p>When a Cacodemon senses the presence of the living, it will hunt them relentlessly until it gets close enough to gnaw on them using an impressive set of mandibles. To aid the hunt, the Cacodemon has a psychoactive narcotic bile which it spews at range. On contact, this bile inhibits the perception of the target and compromises movement. The effects wear off after a few moments, which is often enough time for the lumbering beast to get within bite range.</p>
+<p>巨脑魔是一种狰狞的魔物，纯为摄食的欲望驱使。它的智能有限，但是因其巨大的体型和杀伤力，为恶魔大军时常派上战场的可怕武器。</p>
+<p>巨脑魔察觉到附近有生物时，就会开始持续追捕，接近目标之后，用它恐怖的大嘴啃噬。巨脑魔可以向攻击目标吐出可以麻醉神经的胆汁，一旦命中，目标的感官能力失衡、无法行动。麻醉效果在短时间内就会消退，但只要目标距离够近，巨脑魔绝对有足够的时间撕烂目标。</p>
+<h2 id="Pinky（粉红魔）"><a href="#Pinky（粉红魔）" class="headerlink" title="Pinky（粉红魔）"></a>Pinky（粉红魔）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Pinky.png?raw=true" alt="Pinky"></p>
+<p>These demonic animals are unnamed by those in Hell. They were colloquially named Pinkies, due to their unusual skin pigmentation, when first discovered by the Lazarus Project’s Tethering Operation (MTC 2146/351). Their aggressive nature against the living is well documented.</p>
+<p>Pinkies will charge once their prey is detected, using a cortical bone plate that covers their face as a battering ram. They accelerate quickly but have limited control when charging. Their inability to stop quickly or turn makes them vulnerable to charging over ledges or into hard surfaces, stunning them. At close range, the Pinky has a significant bite which it will use to fend off attackers. They have limited visual perception and rely primarily on pheromone detection to locate enemies. The thinner skin on their flanks does not offer as much protection and should be considered a point of weakness.</p>
+<p>Gnawed carcasses of Pinkies have been extracted from portals, suggesting that they are considered a delicacy in Hell.</p>
+<p>这些魔化动物在地狱没有名称。拉萨路计划在火星历2146年351日圈捕行动中发现这个物种时，便以其不寻常的肤色，替它取了一个口语化的名字：粉红魔。有关它们对于生物的粗暴习性也有留下详细的记录。粉红魔会在发现敌人时立刻冲锋，利用覆盖脸部的头骨骨盘捣碎对方。它们虽然能够加速冲刺，但是冲锋时不善控制力道，因此无法马上停下或转向，容易冲过头落下悬崖，或撞击到坚硬表面而晕眩。粉红魔会在近距离张开血盆大口击退敌人。它们视角受到限制，因此主要依靠费洛蒙侦测敌人位置。粉红魔两侧单薄的皮肤没有保护作用，是可以攻击的弱点。</p>
+<p>有人曾在传送门附近取得粉红魔被啃咬过的尸体，可见它们也会被当作地狱的美食。</p>
+<h2 id="Spectre（幽灵）"><a href="#Spectre（幽灵）" class="headerlink" title="Spectre（幽灵）"></a>Spectre（幽灵）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Spectre.png?raw=true" alt="Spectre"></p>
+<p>The Spectre is the unfortunate result of a misguided attempt to genetically modify the Pinky. Several Pinkies were gathered during the first Lazarus Project’s Tethering Operation (MTC 2146/351). Four of the captured beasts were vivisected. While three of these experiments resulted in the death of the subjects, one resulted in a Pinky with limited psionic abilities. In an attempt to increase its ocular capacity, the optic nerve of a Cacodemon was transplanted into the Pinky. After the operation, the animal was returned to its enclosure to recover. It is believed that the beast was accidentally released from its pen when its keeper, thinking the invisible Spectre had escaped, opened the gate. Several months after the first Spectre went missing, the second Tethering Operation (MTC 2147/016) captured two fertile specimens. Presumably, the original Spectre wandered into the Lazarus Wave testing facility and was teleported back to Hell by a Summoner. It is unknown how the Spectre managed to breed, but the psionic trait has carried to the offspring.</p>
+<p>Besides psionic invisibility, there are no known difference between the Pinky and Spectre.</p>
+<p>尝试改造粉红魔基因的不幸失败创造了幽灵。火星历2146年351日的围捕行动中成功捕捉了数只粉红魔，并对其中四只进行活体实验。三只粉红魔在实验中死亡，剩下一只获得有限的灵能能力。在增加粉红魔视界的实验中，研究人员移植了巨脑魔的视神经到粉红魔身上。在手术后，这只粉红魔被放回栏内。据信看管人员因为以为隐形的幽灵已经逃脱，而开门误放了怪兽。第一只幽灵失踪数个月后，于火星历2146年483日执行的第二次围捕行动过程中捕获两只有生育能力的样本。研究人员假设幽灵游荡到拉萨路能量波测试设施，接着被恶魔召唤师传送回地狱。目前仍未知晓幽灵如何生育，但经证实该物种的灵能能力已经传衍到其后代。</p>
+<p>目前所知，粉红魔与幽灵的差别仅在于隐形能力的具备与否。</p>
+<h2 id="Mancubus（肥球）"><a href="#Mancubus（肥球）" class="headerlink" title="Mancubus（肥球）"></a>Mancubus（肥球）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Mancubus.png?raw=true" alt="Mancubus"></p>
+<p>The Mancubus is a lumbering behemoth demon. A foul odor accompanies its presence, a stench that can be overwhelming if inhaled directly. Mancubi gorge on anything they can find and are not averse to eating rancid flesh. Their diet rots in their digestive system, making their innards highly flammable. These foul creatures are decked in light armor when they reach maturity, but their grotesque frame soon outgrows the armor, exposing their stomach and face.</p>
+<p>Mancubi have taken their disgusting physical condition and turned it into a weapon. As they reach maturity, a chitinous growth begins to form over each hand, creating a hard shelled “barrel.” As the flesh inside decomposes, a noxious effluvium begins to leak from the barrel. The Mancubus can spew this discharge from the barrel over a remarkable distance. The volatile goo ignites under the tremendous pressure, creating a highly effective biomechanical flamethrower.</p>
+<p>Their bizarre physiology can also be their undoing. The putrid skin covering their soft belly is easily pierced. When exposed, their organs will explode violently, showering a sizeable area with their revolting (and toxic) innards.</p>
+<p>肥球是笨重庞大的恶魔。它们带着恶臭横行四方，他人直接吸到臭氧会导致昏迷。肥球遇见任何东西都会吞噬下肚，连腐肉也来者不拒。它们吞下的恶心食物在消化系统中腐烂，使得内脏容易爆炸且易燃。这些恶心的怪物在长成成体后会装下轻型装甲，但是肥球畸形的躯体很快溢出装甲外面，暴露出腹部与脸部。</p>
+<p>肥球将消化特性转化为武器。它们长成成体时，双手会长出硬物，称为重壳“炮管”。毒气随着体内腐肉的分解，会从炮管逸出。肥球可以喷射毒气到一定距离外。挥发的毒浆可以在高压下点燃，化为强大的生化火焰发射器。</p>
+<p>这种怪异的生理机能也可能毁了它们。它们柔软肚腩上的腐烂皮肤非常薄弱，爆炸的时候器官会四处飞溅，将恶心（且有毒）的内脏喷溅在广大的区域。</p>
+<h2 id="Cyber-Mancubus（机械肥球）"><a href="#Cyber-Mancubus（机械肥球）" class="headerlink" title="Cyber-Mancubus（机械肥球）"></a>Cyber-Mancubus（机械肥球）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/CyberMancubus.png?raw=true" alt="Cyber-Mancubus"></p>
+<p>The Mancubus strain of demon has long been a subject of fascination among Lazarus Project scientists. Eager to understand the biology of these creatures, a team of biogeneticists (led by Dr. Pierce herself) was formed to research and manipulate the behavior and effect of the creatures.</p>
+<p>The work of Dr. Pierce and her biogeneticists proved successful and several Cybernetic Mancubi are currently held in captivity within the Lazarus Project laboratories. They are held under the strictest UAC security protocols, so there is no chance of an escape [citation needed].</p>
+<p>The Cybernetic Mancubus differs from its naturally occurring brethren in several ways. The chitinous growth on each arm has been replaced with a UAC developed rifling barrel, which allows the Mancubus to fire its bile at much greater distances. The resulting ejection however, does not ignite. The bile is still highly toxic, and will quickly poison any organic creature it hits. Their behavior has also been modified to make them favor engagement distance to complement their long range bio-sniping weapon.</p>
+<p>While attempts have been made to provide better fitting armor to these cybernetic monsters, they invariably outgrow their uniform within a few weeks.</p>
+<p>肥球的恶魔血统一直以来都是拉萨路计划科学家很有兴趣的目标。由于渴望了解这种怪物的胜利，皮尔斯博士本人组织了一群生化遗传专家进行研究，对这种怪物的行为进行实验并观察影响。</p>
+<p>皮尔斯博士与她手下的生化遗传学这的研究成功了，拉萨路计划实验室内还拘禁有数只机械肥球。这些机械肥球受到最严密规格的UAC保全戒护，因此逃脱是完全不可能的[出处不明]。</p>
+<p>机械肥球与自然生成的同类有许多不一样的地方。研究员将机械肥球手臂上的壳状生长物改装成UAC开发的膛管，使肥球可以将胆汁喷射到更远的距离。这样的喷射物并不会燃烧，但胆汁仍然含有剧毒，得以迅速让击中的生物体中毒。机械肥球的生态也经过改造，是它们偏好以更远的距离交战，成员远距离的生化狙击武器。</p>
+<p>虽然研究院试图为这种机械怪物打造更好的装甲，但成品最终都会在数周内因为机械肥球的提醒扩张而不敷使用。</p>
+<h2 id="Hell-Knight（地狱骑士）"><a href="#Hell-Knight（地狱骑士）" class="headerlink" title="Hell Knight（地狱骑士）"></a>Hell Knight（地狱骑士）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/HellKnight.png?raw=true" alt="Hell Knight"></p>
+<p>The Hell Knight is a towering brute bred for combat deep in the bowels of Hell. These diabolical beasts are the prized gladiators of the demon-horde. They relentlessly stomp towards their target, smashing their massive fists into the ground to create shockwaves that stagger their opponent and leave them vulnerable to bone-crushing melee attacks. The Hell Knight’s powerful legs allow it to leap across large distances effortlessly, quickly closing the gap to its enemy.</p>
+<p>Tablets, retrieved from the Great Steppe in the UAC Automated Survey of 2143, suggest that the Hell Knights originally flanked the Great Serpent during the first age. After their master was defeated by the Guardian the Hell Knights were placed in the arenas of Hell, where they would feed on any victims thrown to them by the Demon overlords as sport. It is now believed that they guard the most sacred and important relics in the nether world.</p>
+<p>地狱骑士来自地狱深处，是高大且残暴的战斗物种。这种魔兽是颇受恶魔大军看重的斗士。它们无情地奔向目标，用巨大的拳头向地面重击产生冲击波，震撼它们的对手，并在肉搏战中将对手粉身碎骨。地狱骑士的双腿十分有力，可以轻松进行长距离的跳跃，快速缩短与敌人的距离。</p>
+<p>2143年UAC自动调查在大荒原寻获的碑文指出，地狱骑士是巨蛇大军在第一纪的护卫。巨蛇大君被守望大君击败后，地狱骑士被放逐到地狱的竞技场内，恶魔君主为了娱乐丢进场中的猎物，是他们唯一的食物。目前根据研判，地狱骑士守卫着冥界最神圣、最重要的遗物。</p>
+<h2 id="Baron-of-Hell（地狱男爵）"><a href="#Baron-of-Hell（地狱男爵）" class="headerlink" title="Baron of Hell（地狱男爵）"></a>Baron of Hell（地狱男爵）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/BaronofHell.png?raw=true" alt="Baron of Hell"></p>
+<p>The Baron of Hell is the highest demon among the order of the Hell Knights.  They rarely leave Hell, and no Baron of Hell has yet been captured by any of the Tethering Operations. Details regarding their behavior and physiology are therefore limited.</p>
+<p>It is clear that Barons are ferocious fighters with a bloodlust unparalleled by any other demon. Barons, larger and faster than their lesser brothers, also possess the ability to generate Hell-energy fireballs which can be hurled at a target. In the doomed Project Lazarus Manned Expedition (MTC 2145/128) it is believed that most of the explorers were set upon by Barons of Hell, though the details are unclear.</p>
+<p>Tablets, retrieved from the Great Steppe in the UAC Automated Survey of 2143, suggest that the Barons of Hell are the current Royal Guard of the unknown Dark Lord of the fourth age. While the nature of this entity is unknown, it must be presumed that as the Royal Guard’s power has significantly increased, so too has the power of their master.</p>
+<p>地狱男爵是地狱骑士团位阶最高的恶魔。它们鲜少离开地狱，目前圈捕行动也尚未捕获地狱男爵，因此其行为模式与生理机能的细节仍然不足。</p>
+<p>地狱男爵是凶猛的战士，其嗜血的程度无魔能及。它们比地狱骑士更巨大敏捷，还能制造地狱能量火球，猛砸在目标身上。据信火星历2145年128日的拉萨路载人探勘行动，就是被地狱男爵所袭击而失败，但细节不明。</p>
+<p>2143年UAC自动调查在大荒原寻获碑文，碑文指出地狱男爵是第四纪元某位暗黑领主的皇室卫兵。虽然无法确认碑文真假，仍可以想见皇室卫兵的力量提升之后，大君的力量亦然会增强。</p>
+<h2 id="Cyberdemon（机械巨魔）"><a href="#Cyberdemon（机械巨魔）" class="headerlink" title="Cyberdemon（机械巨魔）"></a>Cyberdemon（机械巨魔）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/Cyberdemon.png?raw=true" alt="Cyberdemon"></p>
+<p>Considered to be the most significant marker of success in the development of Argent-Organic research, the Cyberdemon is the flagship creation of the Lazarus Project. The symbiotic union of a Baalgar demon found during the second Project Lazarus Manned Expedition (MTC 2148/177) and an Argent Accumulator, this beast is capable of withstanding so much punishment that the creature must be kept in permanent suspended animation. Repeated attempts to subdue the beast prove unsuccessful as when exhausted, the Cyberdemon simply replenishes its life force from the Accumulator and attacks again with greater ferocity. Only by removing the Argent implant can the beast be restrained. The Cyberdemon remains in stasis until a suitable method of control can be found.</p>
+<p>The Corrax tablets discovered during the UAC Automated Survey of 2143 mention an ancient battle in the Titan’s Realm during the third age. An expedition to the plains recovered several relics including the petrified remains of a massive shadow lord believed to be an ancient Baalgar demon. Researchers in the Lazarus Labs began work on piecing the creature back together. At first the project mandate was to construct an educational and inspirational exhibit. However, the focus quickly shifted when an attempt to meld the petrified tissue uncovered that exposure to small doses of plasmatic Argent Energy would reanimate the relic. The potential of creating living, growing tissue from the relic and the lure of an ultimate battle demon was too enticing to - pass up. The project team quickly shifted direction and began work on melding the ancient remains with high tech weaponry.</p>
+<p>During the Cyberdemon Reanimation Project, the beast was kept alive by controlling the amount of plasmatic Argent Energy it retrieved. This kept the beast in an effectively “brain-dead” state while additional components were cybernetically implanted. A neural pathway was created between the creature’s brain and the Argent Accumulator, allowing the creature to administer Argent power to any part of its body as needed. In hindsight, this neural pathway was a mistake as once the pathway was activated the dormant beast immediately administered an Argent surge to the medulla oblongata, which allowed it to restore motor function. Once active, the circulatory system quickly restored and the beast achieved full motor function within a few minutes. It is only through the bravery of Follower Jacobson that the beast was contained. Follower Jacobson willingly gave his own life as bait when he lured the giant Cyberdemon into holding pen 6, where it could be contained. Unfortunately, there was no way to retrieve Jacobson once the doors has been bolted, and he was sacrificed.</p>
+<p>A report following the incident suggested that this act was not instinct by the Cyberdemon, but rather a suggestion of a greater intelligence governing the will of any creature demon borne - a “mastermind” of sorts. Research on this theory continues.</p>
+<p>纵观亚金生化研究，创造机械巨魔可说是拉萨路计划的开发过程中最重要的里程碑。这是巴尔卡恶魔（自火星历2148年177日的拉萨路计划圈捕行动中捕获）与亚金蓄能器的合体，这个怪兽可以承受大量的物理攻击，因此必须使它永远维持在假死状态。由于机械巨魔在耗尽力气时，会立刻从亚金蓄能器补充能量发动更凶猛的攻击，因此压制这个怪兽的多次尝试都失败了。要压制这个怪兽的唯一办法，只有移除它身上的亚金蓄能器。在找到合适的控制方法以前，机械巨魔会维持在停滞状态。</p>
+<p>2143年自动调查取得的精钢碑文提到第三纪在泰坦魔域的一场古战争。针对平原的考察寻获许多遗物，包括一个巨大暗影领主的石化遗骸，这领主可能是古老的巴尔卡恶魔。拉萨路实验室的研究员开始解构这个怪物。计划最初仅授权作为教育与启蒙展览用途，但是研究员尝试接合石化组织时，发现组织若是暴露在少量亚金能源浆下，遗体就会活化。研究员抵抗不了诱惑，积极想研究文物制造成长组织的可能性和究极恶魔战士，于是计划小组很快改变研究方向，着手将高科技武器接合到古代遗骸上。</p>
+<p>在机械巨魔活化计划期间，研究人员借由控制亚金能源浆的接收量来维系怪物的生命，在植入额外的机械元件期间，有效将怪兽控制在“脑死”状态。研究人员在怪兽的大脑与亚金蓄能器间建立了神经管道，这让这只怪兽可以补给身上需要亚金能源的部位。现在回想起来，建立这条神经管道是一项不智之举，因为管道成功建立以后，仍在休眠的怪兽立刻将亚金能源传到延髓，恢复了运动机能。怪兽的循环系统很快恢复运作，并在数分钟后取回行动能力。后来，靠着侍从雅各森的英勇行为，才成功阻止怪兽逃脱。侍从雅各森自愿牺牲自己的性命，将机械巨魔引诱到六号畜栏去进行收容。不幸的是，在关门牵制怪兽后，我们没有办法救回雅各森，他因此而牺牲。</p>
+<p>事件报告指出，这并非机械巨魔的直觉行为，而是有更加强大的智能在掌管恶魔——某种“恶魔首脑”。研究人员会继续研究这个理论。</p>
+<h2 id="Hell-Guards（地狱卫兵）"><a href="#Hell-Guards（地狱卫兵）" class="headerlink" title="Hell Guards（地狱卫兵）"></a>Hell Guards（地狱卫兵）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/HellGuards.png?raw=true" alt="Hell Guards"></p>
+<p>The borderlands between Titan’s Realm and the Great Steppe is home to one of the most ferocious demons yet found - the (biomech) Hell Guard. While there has been no direct human contact with this beast, it was discovered by Scout-Bots during the second Project Lazarus Tethering Operation (MTC 2147/016). Confronting this demon signaled the end of the expedition, but the Scout-Bots did manage to send data to the relay beacons before they were destroyed.</p>
+<p>A detailed study of the few video frames that were captured before the equipment was destroyed revealed that the Hell Guard is actually a parasite housed within a bone and keratin exoskeleton. The parasite, imbued with enormous quantities of Hell energy, provides power to the Hell Guard and controls its actions entirely. Before entering the exoskeleton, the Hell Guard exoskeleton is a lifeless husk. Attempts to retrieve the parasite alone have proved fruitless as the uncoupled demon is too weak to survive passage between dimensions. Once coupled however, the demon presents a daunting and relentless enemy.</p>
+<p>泰坦魔域与大荒原的边界住着目前所知最凶恶的恶魔之一——（生化）地狱卫兵。虽然人类并没有跟这只怪物直接接触过，但侦察机器人在第二次拉萨路计划圈捕考察中发现了它（火星历2147年016日）。遭遇这个恶魔同时也意味了该次考察的终结，但是侦察机器人仍然在被摧毁以前发送资料给中继信标。</p>
+<p>根据设备被摧毁前取得的极短影响分析，这种恶魔其实是被巨大的外角质骨骼保护的寄生体。这种寄生体汲取了各式各样的地狱能量，借着这强大的能量，它们能彻底地控制地狱卫兵。在寄生虫未进驻前，地狱卫兵不过是一具没有生命的空壳。捕捉寄生虫的尝试一直都徒劳无功，因为一旦寄主分离，它们会虚弱到甚至无法在跨界传送的过程中存货。然而，只要寄生体与寄主一结合，它们就摇身一变成为极为慑人且残酷的敌人。</p>
+<h2 id="Spider-Mastermind（蜘蛛首脑）"><a href="#Spider-Mastermind（蜘蛛首脑）" class="headerlink" title="Spider Mastermind（蜘蛛首脑）"></a>Spider Mastermind（蜘蛛首脑）</h2><p><img src="https://github.com/reject123/BlogPicRepo/blob/main/Monsters_DOOM/SpiderMastermind.png?raw=true" alt="Spider Mastermind"></p>
+<p>The first Project Lazarus Tethering Operation (MTC 2146/351) retrieved a small compendium from the Umbral Plains in the crypt of a destroyed tower of unknown construction (artifact reference PL E2M8). This “vade mecum” was mostly illegible, but it did contain one of the rare references to the Aranea Imperatrix - a mystical demon that is still largely unknown.</p>
+<p>“When the gate is opened, in the fourth age, when we have risen and the masters have shown us the path, she will be come. A great blessing will be given to the key holder, for they will become one with the master, and in that holy union the power of the dark priest will be unleashed upon the heretics of the Penumbral Plain. The Aranea Imperatrix. Carried in the mind of all who follow, fed from the blood of those who fell, made with bone of rock, iron, steel and sinew. A mighty god to rule over all other gods. One become two become legion.”</p>
+<p>火星历2146年351日的第一次拉萨路计划圈捕行动中，研究人员在阴影平原寻获一本小型纲要。这本手册（文物引用编号PLE2M8）在不知名毁坏塔楼的地窖中被发现，内容多半无法辨认。然而手册提及蜘蛛女帝，一个神秘鲜为人知的恶魔：“当大门在第四纪打开，我们觉醒并让主人们指引道路的时候，她将降临。她将赐福给守门人，让它们与主人合而为一，在这神圣的结合中，黑暗祭司的力量将会降灾在暗影平原的异教徒身上。蜘蛛女帝啊！她承载我们所追随的意志，受堕落者的血喂养，在钢铁的肌骨中生成。是众神之上的上上之神。一为二，二为群。”</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p><a target="_blank" rel="noopener" href="https://doom.fandom.com/wiki/Codex/Monsters">Codex/Monsters | Doom Wiki | Fandom</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
