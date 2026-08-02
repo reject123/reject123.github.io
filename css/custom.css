@@ -1,0 +1,29 @@
+/* 减小首页文章列表项的上下内边距和间距 */
+.post-list .post-item {
+    padding-top: 0.6rem !important;    /* 上方留白，原版可能较大，调小此值 */
+    padding-bottom: 0.6rem !important; /* 下方留白，调小此值 */
+    margin-bottom: 0.4rem !important;  /* 文章条目之间的间距，调小此值 */
+}
+
+/* 如果文章标题上下也有空隙，一并调整 */
+.post-item .post-title {
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+}
+
+/* 如果日期/元数据下方有空隙 */
+.post-item .post-meta {
+    margin-bottom: 0.2rem !important;
+}
+
+#recent-posts .recent-post-item .recent-post-info .content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4 !important; /* 针对 WebKit 内核浏览器的兼容写法 */
+    line-clamp: 4 !important;         /* 标准属性，专门用来消除这个报错 */
+    overflow: hidden;
+}
+
+#recent-posts .recent-post-item {
+    height: 16.8em;
+}
