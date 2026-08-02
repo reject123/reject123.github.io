@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Reject | Reject</title><meta name="author" content="Reject"><meta name="copyright" content="Reject"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.点击按钮播放音频的示例代码 123456789101112131415161718192021222324252627282930313233343536button.Click([this, button, deviceId](IInspectable const&amp; &#x2F;*sender*&#x2F;, RoutedEventArgs const&amp; &#x2F;*args*&#x2F;)-&gt;winrt:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reject">
+<meta property="og:url" content="http://example.com/2026/07/14/CPPWINRT/index.html">
+<meta property="og:site_name" content="Reject">
+<meta property="og:description" content="1.点击按钮播放音频的示例代码 123456789101112131415161718192021222324252627282930313233343536button.Click([this, button, deviceId](IInspectable const&amp; &#x2F;*sender*&#x2F;, RoutedEventArgs const&amp; &#x2F;*args*&#x2F;)-&gt;winrt:">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-07-14T13:55:16.012Z">
+<meta property="article:modified_time" content="2026-07-14T13:55:16.012Z">
+<meta property="article:author" content="Reject">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "http://example.com/2026/07/14/CPPWINRT/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2026-07-14T13:55:16.012Z",
+  "dateModified": "2026-07-14T13:55:16.012Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Reject",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/07/14/CPPWINRT/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.4"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Reject',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 8.1.1"></head><body><div class="bg-animation" id="web_bg" style="background-image: url(https://github.com/reject123/BlogPicRepo/blob/main/Background/bg_hibaraAi.png?raw=true);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: transparent;"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Reject</span></a><a class="nav-page-title" href="/"><span class="site-name">Reject</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> categories</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-07-14T13:55:16.012Z" title="Created 2026-07-14 21:55:16">2026-07-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-07-14T13:55:16.012Z" title="Updated 2026-07-14 21:55:16">2026-07-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><u>1</u>.点击按钮播放音频的示例代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">button.<span class="built_in">Click</span>([<span class="keyword">this</span>, button, deviceId](IInspectable <span class="type">const</span>&amp; <span class="comment">/*sender*/</span>, RoutedEventArgs <span class="type">const</span>&amp; <span class="comment">/*args*/</span>)-&gt;winrt::fire_and_forget</span><br><span class="line">&#123;</span><br><span class="line">	buttonTest.<span class="built_in">IsEnabled</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">auto</span> play_and_wait = [&amp;](<span class="type">double</span> balance) -&gt; winrt::Windows::Foundation::IAsyncAction</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">co_await</span> winrt::<span class="built_in">apartment_context</span>();</span><br><span class="line">        winrt::Windows::Media::Playback::MediaPlayer newPlayer;</span><br><span class="line">        <span class="keyword">auto</span> file = <span class="keyword">co_await</span> Windows::Storage::StorageFile::<span class="built_in">GetFileFromApplicationUriAsync</span>(Windows::Foundation::<span class="built_in">Uri</span>(<span class="string">L&quot;ms-appx:///Assets/Sound.wav&quot;</span>));</span><br><span class="line">		winrt::hstring targetName = winrt::<span class="built_in">unbox_value</span>&lt;winrt::hstring&gt;(buttonTest.<span class="built_in">Tag</span>());</span><br><span class="line">        <span class="keyword">auto</span> deviceInfos = <span class="keyword">co_await</span> DeviceInformation::<span class="built_in">FindAllAsync</span>(DeviceClass::AudioRender);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span>&amp; device : deviceInfos)</span><br><span class="line">        &#123;</span><br><span class="line">        	std::wstring devicename = device.<span class="built_in">Name</span>().<span class="built_in">c_str</span>();</span><br><span class="line">            std::wstring id = device.<span class="built_in">Id</span>().<span class="built_in">c_str</span>();</span><br><span class="line">            <span class="keyword">if</span> (devicename == targetName)</span><br><span class="line">            &#123;</span><br><span class="line">				newPlayer.<span class="built_in">AudioDevice</span>(device);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">                    </span><br><span class="line">         &#125;</span><br><span class="line">         newPlayer.<span class="built_in">Source</span>(MediaSource::<span class="built_in">CreateFromStorageFile</span>(file));</span><br><span class="line">         winrt::handle eventHandle&#123; <span class="built_in">CreateEvent</span>(<span class="literal">nullptr</span>, TRUE, FALSE, <span class="literal">nullptr</span>) &#125;;</span><br><span class="line">         <span class="keyword">if</span> (!eventHandle)</span><br><span class="line">         	<span class="keyword">co_return</span>; </span><br><span class="line">         <span class="keyword">auto</span> revoker = newPlayer.<span class="built_in">MediaEnded</span>(winrt::auto_revoke,[&amp;eventHandle](<span class="keyword">auto</span>&amp;&amp;... <span class="comment">/*args*/</span>) &#123;</span><br><span class="line">         	<span class="built_in">SetEvent</span>(eventHandle.<span class="built_in">get</span>());</span><br><span class="line">          &#125;);</span><br><span class="line">	     newPlayer.<span class="built_in">AudioBalance</span>(balance);</span><br><span class="line">         newPlayer.<span class="built_in">Play</span>();</span><br><span class="line">         <span class="keyword">co_await</span> winrt::<span class="built_in">resume_on_signal</span>(eventHandle.<span class="built_in">get</span>());</span><br><span class="line">     &#125;;</span><br><span class="line">     <span class="keyword">co_await</span> <span class="built_in">play_and_wait</span>(<span class="number">-1.0</span>);</span><br><span class="line">     <span class="keyword">co_await</span> <span class="built_in">play_and_wait</span>(<span class="number">1.0</span>);</span><br><span class="line">     buttonTest.<span class="built_in">IsEnabled</span>(<span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>其中需要注意<strong>与<code>newPlayer</code>相关代码的顺序</strong>，此外在实践中发现，有时候在<strong><code>co_await winrt::resume_on_signal(eventHandle.get());</code>后添加代码<code>buttonTest.IsEnabled(true);</code>，会导致崩溃</strong>需进一步了解。</p>
+<p>2.使用Windows Toast通知并接受用户点击的消息</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Reject</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2026/07/14/CPPWINRT/">http://example.com/2026/07/14/CPPWINRT/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/08/01/butterflySinglePic/" title="hexo+bufferfly一图流"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">hexo+bufferfly一图流</div></div><div class="info-2"><div class="info-item-1">现用hexo+butterfly主题搭建了一个博客，想要实现一图流的形式，主要是修改butterfly主题的配置文件_config.yml，步骤如下：  修改index_img等为transparent，这一步将各页面顶部图变为透明  123456789101112131415161718192021222324252627# Disable all banner imagesdisable_top_img: false# If the banner of page not setting, it will show the default_top_imgdefault_top_img: transparent# The banner image of index pageindex_img: transparent# The banner image of archive pagearchive_img: transparent# Note: tag page, not tags pagetag_img: transparent# The banner image of tag...</div></div></div></a><a class="pagination-related" href="/2026/06/25/VSConfiguration/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2"></div></div><div class="info-2"><div class="info-item-1">从源程序文件得到最终可运行的程序需要经过以下三个阶段： 编译→链接→运行  编译：将源程序中的#include的头文件进行替换，把函数的声明都替换到源程序中 链接：对于上一步声明的函数，去找这些函数的位置，进行链接 运行：根据上一步找到的函数的位置，在运行时，动态地去执行这些函数  由此，对应Visual Studio的三处配置（项目属性）  编译：VC++→包含目录 或 C/C++→附加包含目录（指定编译阶段去哪找头文件） 链接：VC++→库目录 或 链接器→附加库目录（指定链接阶段去哪这些待链接文件） 运行：根据上一步找到的函数的位置，在运行时，动态地去执行这些函数（指定运行阶段动态运行哪些DLL文件）  对于VC++→包含目录 其中已经包含了许多目录，这些目录别的项目也有，在这个角度上VC++→包含目录是全局的，其他项目也生效。 此外，也可以在VC++→包含目录 添加新的目录，这个新添加的目录只对当前项目有效。 对于C/C++→附加包含目录，里面原来是空的，新添加目录只对当前项目有效。  编译：VC++→包含目录 或 C/C++→附加包含目录（指定编译阶段去哪找头文件） 链...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Reject</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/02/WinUI3/" title="Untitled">Untitled</a><time datetime="2026-08-02T06:50:20.031Z" title="Created 2026-08-02 14:50:20">2026-08-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/02/Github-VS/" title="Untitled">Untitled</a><time datetime="2026-08-02T06:20:11.781Z" title="Created 2026-08-02 14:20:11">2026-08-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/01/butterflySinglePic/" title="hexo+bufferfly一图流">hexo+bufferfly一图流</a><time datetime="2026-08-01T15:32:35.000Z" title="Created 2026-08-01 23:32:35">2026-08-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/07/14/CPPWINRT/" title="Untitled">Untitled</a><time datetime="2026-07-14T13:55:16.012Z" title="Created 2026-07-14 21:55:16">2026-07-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/06/25/VSConfiguration/" title="Untitled">Untitled</a><time datetime="2026-06-25T13:34:02.193Z" title="Created 2026-06-25 21:34:02">2026-06-25</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Reject</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.4</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.4"></script><script src="/js/main.js?v=5.5.4"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        loader: {
+          load: [
+            // Four font extension packages (optional)
+            //- '[tex]/bbm',
+            //- '[tex]/bboldx',
+            //- '[tex]/dsfont',
+            '[tex]/mhchem'
+          ],
+          paths: {
+            'mathjax-newcm': '[mathjax]/../@mathjax/mathjax-newcm-font',
+
+            //- // Four font extension packages (optional)
+            //- 'mathjax-bbm-extension': '[mathjax]/../@mathjax/mathjax-bbm-font-extension',
+            //- 'mathjax-bboldx-extension': '[mathjax]/../@mathjax/mathjax-bboldx-font-extension',
+            //- 'mathjax-dsfont-extension': '[mathjax]/../@mathjax/mathjax-dsfont-font-extension',
+            'mathjax-mhchem-extension': '[mathjax]/../@mathjax/mathjax-mhchem-font-extension'
+          }
+        },
+        output: {
+          font: 'mathjax-newcm',
+        },
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+          packages: {
+            '[+]': [
+              'mhchem'
+            ]
+          }
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          menuOptions: {
+            settings: {
+              enrich: false  // Turn off Braille and voice narration text automatic generation
+            }
+          },
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@4.1.0/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
